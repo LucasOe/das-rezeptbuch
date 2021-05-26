@@ -1,0 +1,32 @@
+### Java ###
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+### Code-Java ###
+# Language Support for Java(TM) by Red Hat extension for Visual Studio Code 
+.classpath
+.project
