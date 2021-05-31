@@ -6,17 +6,17 @@
 	"configurations": [
 		{
 			"type": "java",
-			"name": "Launch Current File",
-			"request": "launch",
-			"mainClass": "${file}"
-		},
-		{
-			"type": "java",
 			"name": "Launch Main",
 			"request": "launch",
 			"vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-16/lib\" --add-modules javafx.controls,javafx.graphics,javafx.fxml,javafx.web",
 			"mainClass": "application.Main",
-			"projectName": "DasRezeptbuch_Marvin_771f24e9"
+			"projectName": "DasRezeptbuch_9480666"
+		},
+		{
+			"type": "java",
+			"name": "Launch Current File",
+			"request": "launch",
+			"mainClass": "${file}"
 		}
 	]
 }

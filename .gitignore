@@ -30,3 +30,5 @@ local.properties
 # Language Support for Java(TM) by Red Hat extension for Visual Studio Code 
 .classpath
 .project
+.fake
+.ionide

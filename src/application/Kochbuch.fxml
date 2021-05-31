@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.CardPane?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-	<left>
-      <VBox prefHeight="350.0" prefWidth="0.0" style="-fx-background-color: Grey;" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="350.0" style="-fx-background-color: Grey;" BorderPane.alignment="CENTER">
          <children>
             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="500.0" prefWidth="50.0" style="-fx-background-color: Grey;" text="Rezepte">
                <graphic>
@@ -40,8 +44,7 @@
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/Kategorien_F.png" />
-                     </image>
-			     </ImageView>
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="500.0" prefWidth="50.0" style="-fx-background-color: Grey;" text="Einkaufsliste">
@@ -49,38 +52,42 @@
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/Einkaufsliste_F.png" />
-                     </image>
-			     </ImageView>
+                     </image></ImageView>
                </graphic>
             </Button>
          </children>
       </VBox>
    </left>
    <top>
-      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Logo.png" />
                </image>
             </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Das Kochbuch">
                <font>
                   <Font name="Bernard MT Condensed" size="24.0" />
                </font>
             </Text>
-            <MenuButton mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Name">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+            <MenuButton mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Name">
               <items>
                 <MenuItem mnemonicParsing="false" text="A-Z" />
                 <MenuItem mnemonicParsing="false" text="Z-A" />
               </items>
             </MenuButton>
-            <MenuButton mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Zeit">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <MenuButton mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Zeit">
               <items>
                 <MenuItem mnemonicParsing="false" text="Up" />
                 <MenuItem mnemonicParsing="false" text="Down" />
               </items>
             </MenuButton>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: Grey;" text="Eigene">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -88,365 +95,225 @@
                         <Image url="@Images/Eigene_F.png" />
                      </image>
                   </ImageView>
-               </graphic>
-			</Button>
+               </graphic></Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
             <TextField prefHeight="20.0" prefWidth="100.0" promptText="Serach" style="-fx-background-color: White;" text="Search" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
             <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: Grey;" text="Suche">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/Search_F.png" />
-                     </image>
-				  </ImageView>
+                     </image></ImageView>
                </graphic>
             </Button>
          </children>
       </HBox>
    </top>
    <center>
-      <CardPane BorderPane.alignment="CENTER">
-          <Label contentDisplay="GRAPHIC_ONLY" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="20.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="30.0" layoutY="30.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="40.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="50.0" layoutY="50.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="60.0" layoutY="60.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-         <Label contentDisplay="GRAPHIC_ONLY" layoutX="70.0" layoutY="70.0" prefHeight="196.0" prefWidth="153.0" style="-fx-padding:10;" text="label1">
-            <graphic>
-               <HBox prefHeight="176.0" prefWidth="342.0">
-                  <children>
-                     <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
-                        </image>
-                     </ImageView>
-                     <VBox prefHeight="176.0" prefWidth="135.0">
-                        <children>
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
-                           <HBox prefHeight="0.0" prefWidth="135.0">
-                              <children>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Fleisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Suppen_F.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@Images/Vegetarisch_F.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </HBox>
-                        </children>
-                     </VBox>
-                  </children>
-               </HBox>
-            </graphic>
-         </Label>
-      </CardPane>
+      <ScrollPane>
+         <content>
+            <VBox prefHeight="176.0">
+               <children>
+                  <Group pickOnBounds="true">
+                     <children>
+                        <AnchorPane prefHeight="176.0" style="-fx-border-width: 3; -fx-border-color: black; -fx-border-radius: 10; -fx-background-color: grey; -fx-opacity: 75;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="215.0" prefWidth="550.0">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
+                                          <HBox prefHeight="0.0">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Fleisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Suppen_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Vegetarisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Group>
+                  <Group layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+                     <children>
+                        <AnchorPane prefHeight="176.0" style="-fx-border-width: 3; -fx-border-color: black; -fx-border-radius: 10; -fx-background-color: grey; -fx-opacity: 75;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="215.0" prefWidth="550.0">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
+                                          <HBox prefHeight="0.0">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Fleisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Suppen_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Vegetarisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Group>
+                  <Group layoutX="10.0" layoutY="231.0" pickOnBounds="true">
+                     <children>
+                        <AnchorPane prefHeight="176.0" style="-fx-border-width: 3; -fx-border-color: black; -fx-border-radius: 10; -fx-background-color: grey; -fx-opacity: 75;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="215.0" prefWidth="550.0">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
+                                          <HBox prefHeight="0.0">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Fleisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Suppen_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Vegetarisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Group>
+                  <Group layoutX="10.0" layoutY="452.0" pickOnBounds="true">
+                     <children>
+                        <AnchorPane prefHeight="176.0" style="-fx-border-width: 3; -fx-border-color: black; -fx-border-radius: 10; -fx-background-color: grey; -fx-opacity: 75;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="215.0" prefWidth="550.0">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/AdobeStock_208580784_Preview.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zeit" />
+                                          <HBox prefHeight="0.0">
+                                             <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Fleisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Suppen_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/Vegetarisch_F.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Group>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
    </center>
 </BorderPane>

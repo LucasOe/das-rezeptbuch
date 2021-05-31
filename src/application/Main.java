@@ -11,7 +11,8 @@ public class Main extends Application {
 	@Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Kochbuch.fxml"));
-		Scene scene = new Scene(root, 400, 300);
+		Scene scene = new Scene(root, 800, 600);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
 
