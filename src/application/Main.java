@@ -16,7 +16,7 @@ public class Main extends Application {
 	@Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("fxml/kochbuch.fxml"));
-		Scene scene = new Scene(root, 800, 600);
+		Scene scene = new Scene(root, 1920, 1080);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
