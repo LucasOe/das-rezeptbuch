@@ -38,8 +38,7 @@ public class KochbuchController {
 				hbox = new HBox();
 
 				hbox.setSpacing(20);
-				hbox.setAlignment(Pos.TOP_CENTER);
-				hbox.setPrefWidth(1820);
+				hbox.setPrefWidth(1246);
 
 				rezeptListView.getChildren().add(hbox);
 

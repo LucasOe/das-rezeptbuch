@@ -113,9 +113,9 @@
       </Pane>
    </left>
    <center>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" BorderPane.alignment="TOP_CENTER">
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" BorderPane.alignment="TOP_CENTER">
          <content>
-            <VBox fx:id="rezeptListView" alignment="TOP_CENTER" spacing="20.0">
+            <VBox fx:id="rezeptListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
                <padding>
                   <Insets bottom="20.0" top="20.0" />
                </padding>
