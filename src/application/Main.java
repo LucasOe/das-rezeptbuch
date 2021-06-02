@@ -24,11 +24,11 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args); // create GUI
 
-		connect(); // connect to Database
-		updateList(); // show rezeptList items in GUI
+		//connect(); // connect to Database
+		//updateList(); // show rezeptList items in GUI
     }
 
-	private static void connect() {
+	public static void connect() {
 		db = new Database(
 			"jdbc:mysql://localhost:3306/rezepte_test",
 			"root",
@@ -52,6 +52,10 @@ public class Main extends Application {
 		debugPrintList(rezeptList);
 		//gui.clearList();
 		//gui.createList(rezeptList);
+	}
+
+	public static ArrayList<Rezept> getRezeptList() {
+		return db.readRezepte();
 	}
 
 	private static void debugPrintList(ArrayList<Rezept> rezeptList) {
