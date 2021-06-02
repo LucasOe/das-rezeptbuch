@@ -23,9 +23,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args); // create GUI
-
-		//connect(); // connect to Database
-		//updateList(); // show rezeptList items in GUI
     }
 
 	public static void connect() {
@@ -37,21 +34,16 @@ public class Main extends Application {
 	}
 
 	public static void addRezept(Rezept rezept) {
-		db.addRezept(rezept);
-		updateList();
+
 	}
 
 	public static void removeRezept(int id) {
-		db.removeRezept(id);
-		updateList();
+
 	}
 
-	public static void updateList() {
+	public static void printList() {
 		rezeptList = db.readRezepte();
-
 		debugPrintList(rezeptList);
-		//gui.clearList();
-		//gui.createList(rezeptList);
 	}
 
 	public static ArrayList<Rezept> getRezeptList() {
