@@ -14,7 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class KochbuchController {
+public class RecipeListController {
 
     @FXML
     private ResourceBundle resources;
@@ -23,19 +23,19 @@ public class KochbuchController {
     private URL location;
 
 	@FXML
-	private VBox rezeptListView;
+	private VBox recipeListView;
 
     @FXML
     void initialize() {
 		Main.connect();
-		ArrayList<Rezept> rezeptList = Main.getRezeptList(1);
+		ArrayList<Recipe> recipeList = Main.getRecipeList(1);
 
-		addRezepte(rezeptList);
+		addRezepte(recipeList);
     }
 
-	private void addRezepte(ArrayList<Rezept> rezeptList) {
+	private void addRezepte(ArrayList<Recipe> recipeList) {
 		HBox hbox = null;
-		for (int i = 0; i < rezeptList.size(); i++) {
+		for (int i = 0; i < recipeList.size(); i++) {
 			if(i % 2 == 0) {
 				// create hbox
 				hbox = new HBox();
@@ -43,30 +43,30 @@ public class KochbuchController {
 				hbox.setSpacing(20);
 				hbox.setPrefWidth(1246);
 
-				rezeptListView.getChildren().add(hbox);
+				recipeListView.getChildren().add(hbox);
 
 				// add Rezept
-				addRezeptPane(hbox, rezeptList.get(i));
+				addRecipePane(hbox, recipeList.get(i));
 			} else {
 				if( hbox != null) {
 					// add Rezept
-					addRezeptPane(hbox, rezeptList.get(i));
+					addRecipePane(hbox, recipeList.get(i));
 				}
 			}
 		}
 	}
 
-	private void addRezeptPane(HBox hbox, Rezept rezept) {
+	private void addRecipePane(HBox hbox, Recipe recipe) {
 		try {
-			Pane rezeptPane = FXMLLoader.load(getClass().getResource("rezept.fxml"));
+			Pane recipePane = FXMLLoader.load(getClass().getResource("recipeView.fxml"));
 
 			// set pane id
-			rezeptPane.setId(String.valueOf(rezept.getId()));
+			recipePane.setId(String.valueOf(recipe.getId()));
 
-			Label rezeptLabelName = (Label) rezeptPane.lookup("#rezeptLabelName");
-			rezeptLabelName.setText(rezept.getName());
+			Label recipeLabelName = (Label) recipePane.lookup("#recipeLabelName");
+			recipeLabelName.setText(recipe.getName());
 
-			hbox.getChildren().add(rezeptPane);
+			hbox.getChildren().add(recipePane);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

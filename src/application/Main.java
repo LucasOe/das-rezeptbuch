@@ -10,11 +10,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 	private static Database db;
-	private static ArrayList<Rezept> rezeptList = new ArrayList<Rezept>();
+	private static ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
 	
 	@Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/kochbuch.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/recipeListView.fxml"));
 		Scene scene = new Scene(root, 1920, 1080);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -32,17 +32,17 @@ public class Main extends Application {
 		);
 	}
 
-	public static void addRezept(Rezept rezept) {
+	public static void addRecipe(Recipe recipe) {
 
 	}
 
-	public static void removeRezept(int id) {
+	public static void removeRecipe(int id) {
 
 	}
 
 	public static void printList() {
-		rezeptList = db.readRezepte();
-		debugPrintList(rezeptList);
+		recipeList = db.readRecipes();
+		debugPrintList(recipeList);
 	}
 
 	/*
@@ -51,20 +51,20 @@ public class Main extends Application {
 			1 = ascending
 			2 = descending
 	*/
-	public static ArrayList<Rezept> getRezeptList(int sortMode) {
-		rezeptList = db.readRezepte();
-		if(sortMode == 0) return rezeptList;
-		
-		Quicksort.sort(sortMode, rezeptList, 0, rezeptList.size()-1);
-		return rezeptList;
+	public static ArrayList<Recipe> getRecipeList(int sortMode) {
+		recipeList = db.readRecipes();
+		if(sortMode == 0) return recipeList;
+
+		Quicksort.sort(sortMode, recipeList, 0, recipeList.size()-1);
+		return recipeList;
 	}
 
-	private static void debugPrintList(ArrayList<Rezept> rezeptList) {
-		System.out.println("rezeptList:");
-		for (Rezept rezept : rezeptList) {
-			System.out.println(rezept.getName() + " Zutaten:");
-			for (String[] zutat : rezept.getZutatenList()) {
-				System.out.println("\t" + zutat[0] + ", " + zutat[1]);
+	private static void debugPrintList(ArrayList<Recipe> recipeList) {
+		System.out.println("Rezept Liste:");
+		for (Recipe recipe : recipeList) {
+			System.out.println(recipe.getName() + " Zutaten:");
+			for (String[] ingredient : recipe.getIngredientList()) {
+				System.out.println("\t" + ingredient[0] + ", " + ingredient[1]);
 			}
 		}
 	}

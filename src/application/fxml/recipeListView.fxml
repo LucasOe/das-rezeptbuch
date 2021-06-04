@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.KochbuchController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeListController">
    <left>
       <Pane minHeight="-Infinity" prefHeight="1080.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER">
          <effect>
@@ -115,7 +115,7 @@
    <center>
       <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" BorderPane.alignment="TOP_CENTER">
          <content>
-            <VBox fx:id="rezeptListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
+            <VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
                <padding>
                   <Insets bottom="20.0" top="20.0" />
                </padding>

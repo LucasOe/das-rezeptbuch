@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
-public class RezeptController {
+public class RecipeController {
 
     @FXML
     private ResourceBundle resources;
@@ -16,7 +16,7 @@ public class RezeptController {
     private URL location;
 
     @FXML
-    private Label rezeptLabelName;
+    private Label recipeLabelName;
 
     @FXML
     void initialize() {
@@ -24,10 +24,10 @@ public class RezeptController {
     }
 
     @FXML
-    void rezeptClicked(MouseEvent event) {
-		Pane rezeptPane = (Pane) event.getSource();
-		int rezeptId = Integer.parseInt(rezeptPane.getId());
+    void recipeClicked(MouseEvent event) {
+		Pane recipePane = (Pane) event.getSource();
+		int recipeId = Integer.parseInt(recipePane.getId());
 
-		System.out.println("Click:" + rezeptId);
+		System.out.println("Click:" + recipeId);
     }
 }

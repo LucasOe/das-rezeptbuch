@@ -5,8 +5,8 @@ import java.util.Collections;
 
 public class Quicksort {
 	// https://www.geeksforgeeks.org/java-program-for-quicksort/
-	private static int partition(int sortMode, ArrayList<Rezept> array, int low, int high) {
-		Rezept pivot = array.get(high);
+	private static int partition(int sortMode, ArrayList<Recipe> array, int low, int high) {
+		Recipe pivot = array.get(high);
 		int i = low-1;
 		for(int j=low; j < high; j++) {
 			// sort mode ascending
@@ -27,7 +27,7 @@ public class Quicksort {
 		return i+1;
 	}
 
-	public static void sort(int sortMode, ArrayList<Rezept> array, int low, int high) {
+	public static void sort(int sortMode, ArrayList<Recipe> array, int low, int high) {
 		if(low < high) {
 			// pi is partitioning index, arr[pi] is now at right place
 			int pi = partition(sortMode, array, low, high);

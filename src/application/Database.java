@@ -19,72 +19,74 @@ public class Database {
 		}
 	}
 
-	public ArrayList<Rezept> readRezepte() {
-		ArrayList<Rezept> rezeptList = new ArrayList<Rezept>();
+	public ArrayList<Recipe> readRecipes() {
+		ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
 
 		try {
-			ResultSet resultRezept = stmt.executeQuery("SELECT * FROM rezeptliste");
-			while(resultRezept.next()) {
-				ArrayList<String[]> zutatenList = new ArrayList<String[]>();
+			ResultSet resultRecipes = stmt.executeQuery("SELECT * FROM rezeptliste");
+			while(resultRecipes.next()) {
+				ArrayList<String[]> ingredientList = new ArrayList<String[]>();
 
 				// Get Attributes
-				int id = resultRezept.getInt("IdRezept");
-				String name = resultRezept.getString("Name");
-				String beschreibung = resultRezept.getString("Beschreibung");
-				int zeit = resultRezept.getInt("Zeit");
+				int id = resultRecipes.getInt("IdRezept");
+				String name = resultRecipes.getString("Name");
+				String desc = resultRecipes.getString("Beschreibung");
+				int time = resultRecipes.getInt("Zeit");
 
 				// Get Zutaten List
 				Statement stmtInner = connection.createStatement();
 
-				ResultSet resultZutat = stmtInner.executeQuery("SELECT Zutat, Menge FROM zutaten LEFT JOIN rezeptliste r on r.IdRezept = zutaten.fkRezept WHERE fkRezept = " + id + ";");
-				while(resultZutat.next()) {
-					String zutat = resultZutat.getString("Zutat");
-					String menge = resultZutat.getString("Menge");
+				ResultSet resultIngredients = stmtInner.executeQuery("SELECT Zutat, Menge FROM zutaten LEFT JOIN rezeptliste r on r.IdRezept = zutaten.fkRezept WHERE fkRezept = " + id + ";");
+				while(resultIngredients.next()) {
+					String ingredient = resultIngredients.getString("Zutat");
+					String amount = resultIngredients.getString("Menge");
 
 					// Add Zutat to list
-					zutatenList.add(new String[]{zutat, menge});
+					ingredientList.add(new String[]{
+						ingredient, amount
+					});
 				}
 
 				// Add Rezept to list
-				rezeptList.add(new Rezept(
+				recipeList.add(new Recipe(
 					id,
 					name,
-					beschreibung,
-					zeit,
-					zutatenList
+					desc,
+					time,
+					ingredientList
 				));
 			}
 
-			return rezeptList;
+			return recipeList;
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
 			return null;
 		}
 	}
 
-	public void addRezept(Rezept rezept) {
+	public void addRecipe(Recipe recipe) {
 		try {
-			// Rezept Hinzufügen
-			stmt.execute("INSERT INTO rezeptliste (Name, Zeit, Favorit, Beschreibung) VALUES ('" + rezept.getName() + "', " + rezept.getZeit() + ", '" + 0 + "', '" + rezept.getBeschreibung() + "');");
+			// Add Recipe
+			stmt.execute("INSERT INTO rezeptliste (Name, Zeit, Favorit, Beschreibung) VALUES ('" + recipe.getName() + "', " + recipe.getTime() + ", '" + 0 + "', '" + recipe.getDesc() + "');");
 			ResultSet result = stmt.executeQuery("select LAST_INSERT_ID() AS IdRezept");
 			result.next();
 			int id = result.getInt("IdRezept");
 			
-			// Zutat Hinzufügen
-			for (String[] zutat : rezept.getZutatenList()) {
-				stmt.execute("INSERT INTO zutaten (Zutat, Menge, fkRezept) VALUES ('" + zutat[0] + "', '" + zutat[1] + "', " + id + ")");
+			// Add Ingredient
+			for (String[] ingredient : recipe.getIngredientList()) {
+				stmt.execute("INSERT INTO zutaten (Zutat, Menge, fkRezept) VALUES ('" + ingredient[0] + "', '" + ingredient[1] + "', " + id + ")");
 			}
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
 		}
 	}
 
-	public void removeRezept(int id) {
+	public void removeRecipe(int id) {
 		try {
-			// Zutaten Löschen
+			// Delete Ingredients
 			stmt.execute("DELETE FROM zutaten WHERE fkRezept = " + id);
 
-			// Rezept Löschen
+			// Delete Recipe
 			stmt.execute("DELETE FROM rezeptliste WHERE IdRezept = " + id);
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
