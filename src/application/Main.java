@@ -1,7 +1,6 @@
 package application;
 	
 import java.util.ArrayList;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -46,8 +45,18 @@ public class Main extends Application {
 		debugPrintList(rezeptList);
 	}
 
-	public static ArrayList<Rezept> getRezeptList() {
-		return db.readRezepte();
+	/*
+		sortMode:
+			0 = disabled
+			1 = ascending
+			2 = descending
+	*/
+	public static ArrayList<Rezept> getRezeptList(int sortMode) {
+		rezeptList = db.readRezepte();
+		if(sortMode == 0) return rezeptList;
+		
+		Quicksort.sort(sortMode, rezeptList, 0, rezeptList.size()-1);
+		return rezeptList;
 	}
 
 	private static void debugPrintList(ArrayList<Rezept> rezeptList) {

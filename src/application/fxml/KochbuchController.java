@@ -28,8 +28,12 @@ public class KochbuchController {
     @FXML
     void initialize() {
 		Main.connect();
-		ArrayList<Rezept> rezeptList = Main.getRezeptList();
+		ArrayList<Rezept> rezeptList = Main.getRezeptList(1);
 
+		addRezepte(rezeptList);
+    }
+
+	private void addRezepte(ArrayList<Rezept> rezeptList) {
 		HBox hbox = null;
 		for (int i = 0; i < rezeptList.size(); i++) {
 			if(i % 2 == 0) {
@@ -50,11 +54,14 @@ public class KochbuchController {
 				}
 			}
 		}
-    }
+	}
 
 	private void addRezeptPane(HBox hbox, Rezept rezept) {
 		try {
 			Pane rezeptPane = FXMLLoader.load(getClass().getResource("rezept.fxml"));
+
+			// set pane id
+			rezeptPane.setId(String.valueOf(rezept.getId()));
 
 			Label rezeptLabelName = (Label) rezeptPane.lookup("#rezeptLabelName");
 			rezeptLabelName.setText(rezept.getName());
