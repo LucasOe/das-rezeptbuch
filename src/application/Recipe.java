@@ -9,14 +9,14 @@ public class Recipe {
 	public String desc;
 	public int time;
 	public boolean isFavorite;
-	public ArrayList<String[]> ingredientList;
+	public ArrayList<Ingredient> ingredientList;
 
 	public Recipe(
 		int id,
 		String name,
 		String desc,
 		int time,
-		ArrayList<String[]> ingredientList
+		ArrayList<Ingredient> ingredientList
 	) {
 		this.id = id;
 		this.name = name;
@@ -65,11 +65,11 @@ public class Recipe {
 		this.isFavorite = isFavorite;
 	}
 
-	public ArrayList<String[]> getIngredientList() {
+	public ArrayList<Ingredient> getIngredientList() {
 		return this.ingredientList;
 	}
 
-	public void setIngredientList(ArrayList<String[]> ingredientList) {
+	public void setIngredientList(ArrayList<Ingredient> ingredientList) {
 		this.ingredientList = ingredientList;
 	}
 }

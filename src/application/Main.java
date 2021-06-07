@@ -63,8 +63,8 @@ public class Main extends Application {
 		System.out.println("Rezept Liste:");
 		for (Recipe recipe : recipeList) {
 			System.out.println(recipe.getName() + " Zutaten:");
-			for (String[] ingredient : recipe.getIngredientList()) {
-				System.out.println("\t" + ingredient[0] + ", " + ingredient[1]);
+			for (Ingredient ingredient : recipe.getIngredientList()) {
+				System.out.println("\t" + ingredient.getIngredient() + ", " + ingredient.getAmount());
 			}
 		}
 	}

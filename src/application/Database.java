@@ -25,7 +25,7 @@ public class Database {
 		try {
 			ResultSet resultRecipes = stmt.executeQuery("SELECT * FROM rezeptliste");
 			while(resultRecipes.next()) {
-				ArrayList<String[]> ingredientList = new ArrayList<String[]>();
+				ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
 
 				// Get Attributes
 				int id = resultRecipes.getInt("IdRezept");
@@ -42,9 +42,10 @@ public class Database {
 					String amount = resultIngredients.getString("Menge");
 
 					// Add Zutat to list
-					ingredientList.add(new String[]{
-						ingredient, amount
-					});
+					ingredientList.add(new Ingredient(
+						ingredient, 
+						amount
+					));
 				}
 
 				// Add Rezept to list
@@ -73,8 +74,8 @@ public class Database {
 			int id = result.getInt("IdRezept");
 			
 			// Add Ingredient
-			for (String[] ingredient : recipe.getIngredientList()) {
-				stmt.execute("INSERT INTO zutaten (Zutat, Menge, fkRezept) VALUES ('" + ingredient[0] + "', '" + ingredient[1] + "', " + id + ")");
+			for (Ingredient ingredient : recipe.getIngredientList()) {
+				stmt.execute("INSERT INTO zutaten (Zutat, Menge, fkRezept) VALUES ('" + ingredient.getIngredient() + "', '" + ingredient.getAmount() + "', " + id + ")");
 			}
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
