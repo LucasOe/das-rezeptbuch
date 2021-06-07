@@ -65,6 +65,8 @@ public class RecipeListController {
 
 			Label recipeLabelName = (Label) recipePane.lookup("#recipeLabelName");
 			recipeLabelName.setText(recipe.getName());
+			Label recipeLabelTime = (Label) recipePane.lookup("#recipeLabelTime");
+			recipeLabelTime.setText(String.valueOf(recipe.getTime()) + "min");
 
 			hbox.getChildren().add(recipePane);
 		} catch (IOException e) {

@@ -39,11 +39,10 @@ public class Main extends Application {
 	public static void removeRecipe(int id) {
 		db.removeRecipe(id);
 	}
-	
+
 	public static Recipe getRecipe(int id) {
 		return db.getRecipe(id);
 	}
-
 
 	/*
 		sortMode:
