@@ -33,7 +33,7 @@ public class Main extends Application {
 	}
 
 	public static void addRecipe(Recipe recipe) {
-
+		db.addRecipe(recipe);
 	}
 
 	public static Recipe getRecipe(int id) {
@@ -41,7 +41,7 @@ public class Main extends Application {
 	}
 
 	public static void removeRecipe(int id) {
-
+		db.removeRecipe(id);
 	}
 
 	/*
