@@ -36,13 +36,14 @@ public class Main extends Application {
 		db.addRecipe(recipe);
 	}
 
+	public static void removeRecipe(int id) {
+		db.removeRecipe(id);
+	}
+	
 	public static Recipe getRecipe(int id) {
 		return db.getRecipe(id);
 	}
 
-	public static void removeRecipe(int id) {
-		db.removeRecipe(id);
-	}
 
 	/*
 		sortMode:
