@@ -1,7 +1,11 @@
-.recipePane {
+.recipePane,
+.sortNamePane,
+.sortTimePane {
 	-fx-background-color: #F3F3F3;
 }
 
-.recipePane:hover {
+.recipePane:hover,
+.sortNamePane:hover,
+.sortTimePane:hover {
 	-fx-background-color: #ECECEC;
 }

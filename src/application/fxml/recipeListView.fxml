@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -9,130 +10,218 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeListController">
-   <left>
-      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
-         <effect>
-            <DropShadow>
-               <color>
-                  <Color opacity="0.1599999964237213" />
-               </color>
-            </DropShadow>
-         </effect>
-         <children>
-            <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="86.0" spacing="20.0">
+
+<StackPane style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeListController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0">
+         <left>
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.1599999964237213" />
+                     </color>
+                  </DropShadow>
+               </effect>
                <children>
-                  <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/Element%2017@8x.png" />
-                     </image>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.1599999964237213" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/Element%2031@8x_Gray.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.1599999964237213" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/Element%2012@8x_Gray.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.1599999964237213" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/Element%2033@8x_Gray.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.1599999964237213" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="86.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Element%2017@8x.png" />
+                           </image>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Element%2031@8x_Gray.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Element%2012@8x_Gray.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Element%2033@8x_Gray.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_CENTER" prefWidth="86.0">
+                     <children>
+                        <ImageView fitHeight="68.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Element%203@8x.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </HBox>
                </children>
-            </VBox>
-            <HBox alignment="TOP_CENTER" prefWidth="86.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+         </left>
+         <center>
+            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <BorderPane.margin>
+                  <Insets bottom="80.0" top="80.0" />
+               </BorderPane.margin>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+      <HBox alignment="TOP_CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="1920.0" StackPane.alignment="TOP_CENTER">
+         <children>
+            <HBox fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="1246.0" spacing="60.0" translateX="43.0">
                <children>
-                  <ImageView fitHeight="68.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/Element%203@8x.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
-                     </HBox.margin>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.1599999964237213" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </ImageView>
+                  <HBox fillHeight="false" spacing="10.0">
+                     <children>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10;" styleClass="sortNamePane">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortNameLabel" text="Name" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
+                                 <font>
+                                    <Font name="Arial Italic" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F3F3F3;">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <HBox fillHeight="false" spacing="10.0">
+                     <children>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10;" styleClass="sortTimePane">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortTimeLabel" text="Zeit" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
+                                 <font>
+                                    <Font name="Arial Italic" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F3F3F3;">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </HBox>
                </children>
             </HBox>
          </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Pane>
-   </left>
-   <center>
-      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" BorderPane.alignment="TOP_CENTER">
-         <content>
-            <VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
-               <padding>
-                  <Insets bottom="20.0" top="20.0" />
-               </padding>
-            </VBox>
-         </content>
-         <BorderPane.margin>
-            <Insets bottom="60.0" top="60.0" />
-         </BorderPane.margin>
-      </ScrollPane>
-   </center>
-</BorderPane>
+         <StackPane.margin>
+            <Insets top="15.0" />
+         </StackPane.margin>
+      </HBox>
+   </children>
+</StackPane>
