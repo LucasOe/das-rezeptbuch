@@ -30,10 +30,10 @@ public class RecipeListController {
 		Main.connect();
 		ArrayList<Recipe> recipeList = Main.getRecipeList(1);
 
-		addRezepte(recipeList);
+		addRecipes(recipeList);
     }
 
-	private void addRezepte(ArrayList<Recipe> recipeList) {
+	private void addRecipes(ArrayList<Recipe> recipeList) {
 		HBox hbox = null;
 		for (int i = 0; i < recipeList.size(); i++) {
 			if(i % 2 == 0) {
