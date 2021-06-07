@@ -36,13 +36,12 @@ public class Main extends Application {
 
 	}
 
-	public static void removeRecipe(int id) {
-
+	public static Recipe getRecipe(int id) {
+		return db.getRecipe(id);
 	}
 
-	public static void printList() {
-		recipeList = db.readRecipes();
-		debugPrintList(recipeList);
+	public static void removeRecipe(int id) {
+
 	}
 
 	/*
@@ -59,13 +58,20 @@ public class Main extends Application {
 		return recipeList;
 	}
 
-	private static void debugPrintList(ArrayList<Recipe> recipeList) {
+	public static void debugPrintList(ArrayList<Recipe> recipeList) {
 		System.out.println("Rezept Liste:");
 		for (Recipe recipe : recipeList) {
 			System.out.println(recipe.getName() + " Zutaten:");
 			for (Ingredient ingredient : recipe.getIngredientList()) {
 				System.out.println("\t" + ingredient.getIngredient() + ", " + ingredient.getAmount());
 			}
+		}
+	}
+
+	public static void debugPrintRecipe(Recipe recipe) {
+		System.out.println(recipe.getName() + " Zutaten:");
+		for (Ingredient ingredient : recipe.getIngredientList()) {
+			System.out.println("\t" + ingredient.getIngredient() + ", " + ingredient.getAmount());
 		}
 	}
 }

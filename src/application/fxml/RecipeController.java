@@ -1,7 +1,10 @@
 package application.fxml;
 
+import application.*;
+
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -33,7 +36,8 @@ public class RecipeController {
 		Pane recipePane = (Pane) event.getSource();
 		int recipeId = Integer.parseInt(recipePane.getId());
 
-		System.out.println("Click:" + recipeId);
+		Recipe recipe = Main.getRecipe(recipeId);
+		Main.debugPrintRecipe(recipe);
     }
 
 	private void clipImage() {

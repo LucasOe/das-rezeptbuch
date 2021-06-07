@@ -82,6 +82,45 @@ public class Database {
 		}
 	}
 
+	public Recipe getRecipe(int id) {
+		try {
+			ResultSet resultRecipe = stmt.executeQuery("SELECT * FROM rezeptliste WHERE IdRezept = " + id);
+			resultRecipe.next();
+
+			// Attributes
+			ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+			String name = resultRecipe.getString("Name");
+			String desc = resultRecipe.getString("Beschreibung");
+			int time = resultRecipe.getInt("Zeit");
+
+			// Get Zutaten List
+			Statement stmtInner = connection.createStatement();
+
+			ResultSet resultIngredients = stmtInner.executeQuery("SELECT Zutat, Menge FROM zutaten LEFT JOIN rezeptliste r on r.IdRezept = zutaten.fkRezept WHERE fkRezept = " + id + ";");
+			while(resultIngredients.next()) {
+				String ingredient = resultIngredients.getString("Zutat");
+				String amount = resultIngredients.getString("Menge");
+
+				// Add Zutat to list
+				ingredientList.add(new Ingredient(
+					ingredient, 
+					amount
+				));
+			}
+
+			return new Recipe(
+				id,
+				name,
+				desc,
+				time,
+				ingredientList
+			);
+		} catch(SQLException exception) {
+			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+			return null;
+		}
+	}
+
 	public void removeRecipe(int id) {
 		try {
 			// Delete Ingredients

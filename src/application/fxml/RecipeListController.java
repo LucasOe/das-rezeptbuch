@@ -29,7 +29,6 @@ public class RecipeListController {
     void initialize() {
 		Main.connect();
 		ArrayList<Recipe> recipeList = Main.getRecipeList(1);
-		Main.printList();
 
 		addRecipes(recipeList);
     }
