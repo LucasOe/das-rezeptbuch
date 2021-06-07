@@ -47,8 +47,10 @@ public class Main extends Application {
 	/*
 		sortMode:
 			0 = disabled
-			1 = ascending
-			2 = descending
+			1 = ascending Name
+			2 = descending Name
+			3 = ascending Time
+			4 = descending Time
 	*/
 	public static ArrayList<Recipe> getRecipeList(int sortMode) {
 		recipeList = db.readRecipes();
