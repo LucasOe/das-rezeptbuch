@@ -15,7 +15,6 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeListController">
    <children>
       <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0">
@@ -33,7 +32,7 @@
                      <children>
                         <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Element%2017@8x.png" />
+                              <Image url="@images/menu/Element%2017@8x.png" />
                            </image>
                            <effect>
                               <DropShadow>
@@ -48,25 +47,7 @@
                         </ImageView>
                         <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Element%2031@8x_Gray.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                           <effect>
-                              <DropShadow>
-                                 <color>
-                                    <Color opacity="0.1599999964237213" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/Element%2012@8x_Gray.png" />
+                              <Image url="@images/menu/Element%2031@8x_Gray.png" />
                            </image>
                            <VBox.margin>
                               <Insets />
@@ -84,7 +65,25 @@
                         </ImageView>
                         <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Element%2033@8x_Gray.png" />
+                              <Image url="@images/menu/Element%2012@8x_Gray.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.1599999964237213" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/menu/Element%2033@8x_Gray.png" />
                            </image>
                            <VBox.margin>
                               <Insets />
@@ -106,7 +105,7 @@
                      <children>
                         <ImageView fitHeight="68.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Element%203@8x.png" />
+                              <Image url="@images/menu/Element%203@8x.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="10.0" top="10.0" />
