@@ -142,6 +142,21 @@
             </ScrollPane>
          </center>
       </BorderPane>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" prefHeight="1080.0" prefWidth="1920.0">
+         <center>
+            <BorderPane maxWidth="-Infinity" prefWidth="1246.0" translateX="43.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="80.0" top="80.0" />
+               </BorderPane.margin>
+               <top>
+                  <Pane prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom, #FFF0EE, transparent);" BorderPane.alignment="CENTER" />
+               </top>
+               <bottom>
+                  <Pane prefHeight="30.0" style="-fx-background-color: linear-gradient(to top, #FFF0EE, transparent);" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
       <HBox alignment="TOP_CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="1920.0" StackPane.alignment="TOP_CENTER">
          <children>
             <HBox fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="1246.0" spacing="60.0" translateX="43.0">

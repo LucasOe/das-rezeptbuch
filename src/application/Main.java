@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -17,6 +18,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/recipeListView.fxml"));
 		Scene scene = new Scene(root, 1920, 1080);
         primaryStage.setScene(scene);
+		primaryStage.setTitle("Das Rezeptbuch");
+		primaryStage.getIcons().add(new Image("application/fxml/images/menu/Element 3@8x.png"));
+		primaryStage.setResizable(false);
         primaryStage.show();
     }
 
