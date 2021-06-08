@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -166,7 +167,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Pane>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F3F3F3;">
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10;" styleClass="sortNameArrowPane">
                            <effect>
                               <DropShadow>
                                  <color>
@@ -177,6 +178,16 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <children>
+                              <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortNameArrowImage">
+                                 <image>
+                                    <Image url="@images/menu/down-arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </children>
                         </Pane>
                      </children>
                   </HBox>
@@ -201,7 +212,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Pane>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F3F3F3;">
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10;" styleClass="sortTimeArrowPane">
                            <effect>
                               <DropShadow>
                                  <color>
@@ -212,6 +223,16 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <children>
+                              <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortTimeArrowImage">
+                                 <image>
+                                    <Image url="@images/menu/down-arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </children>
                         </Pane>
                      </children>
                   </HBox>
