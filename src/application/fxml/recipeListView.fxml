@@ -18,7 +18,6 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeListController">
    <center>
       <StackPane BorderPane.alignment="CENTER">
@@ -26,7 +25,7 @@
             <Insets />
          </BorderPane.margin>
          <children>
-            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxWidth="-Infinity" minWidth="-Infinity" pannable="true" prefWidth="1246.0" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER">
+            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
                <content>
                   <VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
                      <padding>
