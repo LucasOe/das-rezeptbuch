@@ -164,7 +164,7 @@
             <Insets bottom="19.0" top="19.0" />
          </StackPane.margin>
       </HBox>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane maxWidth="-Infinity" StackPane.alignment="CENTER_LEFT">
          <left>
             <HBox prefWidth="86.0" BorderPane.alignment="CENTER">
                <children>
