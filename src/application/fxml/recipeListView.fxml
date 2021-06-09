@@ -120,7 +120,7 @@
                                     </DropShadow>
                                  </effect>
                                  <children>
-                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortTimeLabel" text="Zeit" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
+                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortLabel" text="Zeit" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
                                        <font>
                                           <Font name="Arial Italic" size="28.0" />
                                        </font>
