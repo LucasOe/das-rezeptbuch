@@ -26,7 +26,7 @@
             <Insets />
          </BorderPane.margin>
          <children>
-            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER">
+            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxWidth="-Infinity" minWidth="-Infinity" pannable="true" prefWidth="1246.0" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER">
                <content>
                   <VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
                      <padding>
@@ -35,7 +35,7 @@
                   </VBox>
                </content>
             </ScrollPane>
-            <BorderPane mouseTransparent="true">
+            <BorderPane maxWidth="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefWidth="1246.0">
                <top>
                   <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom, #FFF0EE, transparent);" BorderPane.alignment="CENTER" />
                </top>
@@ -44,143 +44,136 @@
                </bottom>
             </BorderPane>
          </children>
+         <padding>
+            <Insets left="19.0" />
+         </padding>
       </StackPane>
    </center>
    <top>
-      <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="86.0" style="-fx-background-color: #FFF0EE;" BorderPane.alignment="CENTER">
+      <HBox BorderPane.alignment="TOP_LEFT">
          <children>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="86.0" prefWidth="1920.0">
-               <left>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER">
-                     <BorderPane.margin>
-                        <Insets />
-                     </BorderPane.margin>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+               <children>
+                  <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/menu/Element%203@8x.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="1246.0" spacing="60.0">
                      <children>
-                        <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/menu/Element%203@8x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </left>
-               <center>
-                  <Pane maxWidth="-Infinity" prefWidth="1246.0" BorderPane.alignment="CENTER">
-                     <BorderPane.margin>
-                        <Insets bottom="19.0" top="19.0" />
-                     </BorderPane.margin>
-                     <children>
-                        <HBox alignment="CENTER" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="60.0">
+                        <HBox fillHeight="false" spacing="10.0">
                            <children>
-                              <HBox fillHeight="false" spacing="10.0">
+                              <Pane fx:id="sortNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNamePane">
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.1599999964237213" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
                                  <children>
-                                    <Pane fx:id="sortNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNamePane">
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                       <children>
-                                          <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortLabel" text="Name" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
-                                             <font>
-                                                <Font name="Arial Italic" size="28.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Pane>
-                                    <Pane fx:id="sortNameArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNameArrowPane">
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                       <children>
-                                          <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
-                                             <image>
-                                                <Image url="@images/menu/down-arrow.png" />
-                                             </image>
-                                             <viewport>
-                                                <Rectangle2D />
-                                             </viewport>
-                                          </ImageView>
-                                       </children>
-                                    </Pane>
+                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortLabel" text="Name" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
+                                       <font>
+                                          <Font name="Arial Italic" size="28.0" />
+                                       </font>
+                                    </Label>
                                  </children>
-                              </HBox>
-                              <HBox fillHeight="false" spacing="10.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane fx:id="sortNameArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNameArrowPane">
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.1599999964237213" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                                  <children>
-                                    <Pane fx:id="sortTimeLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimePane">
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                       <children>
-                                          <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortTimeLabel" text="Zeit" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
-                                             <font>
-                                                <Font name="Arial Italic" size="28.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Pane>
-                                    <Pane fx:id="sortTimeArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimeArrowPane">
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                       <children>
-                                          <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
-                                             <image>
-                                                <Image url="@images/menu/down-arrow.png" />
-                                             </image>
-                                             <viewport>
-                                                <Rectangle2D />
-                                             </viewport>
-                                          </ImageView>
-                                       </children>
-                                    </Pane>
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
+                                       <image>
+                                          <Image url="@images/menu/down-arrow.png" />
+                                       </image>
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                    </ImageView>
                                  </children>
-                              </HBox>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <HBox fillHeight="false" spacing="10.0">
+                           <children>
+                              <Pane fx:id="sortTimeLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimePane">
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.1599999964237213" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortTimeLabel" text="Zeit" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
+                                       <font>
+                                          <Font name="Arial Italic" size="28.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane fx:id="sortTimeArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimeArrowPane">
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.1599999964237213" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <children>
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
+                                       <image>
+                                          <Image url="@images/menu/down-arrow.png" />
+                                       </image>
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
                            </children>
                         </HBox>
                      </children>
-                  </Pane>
-               </center>
-            </BorderPane>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="19.0" />
+               </padding>
+            </HBox>
          </children>
-      </Pane>
+      </HBox>
    </top>
    <bottom>
-      <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="86.0" style="-fx-background-color: #FFF0EE;" BorderPane.alignment="CENTER">
+      <HBox>
          <children>
-            <BorderPane>
-               <left>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" BorderPane.alignment="CENTER" />
-               </left>
-            </BorderPane>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" />
          </children>
-      </Pane>
+      </HBox>
    </bottom>
    <left>
       <HBox prefWidth="86.0" BorderPane.alignment="CENTER">
