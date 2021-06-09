@@ -32,7 +32,7 @@ public class RecipeController {
     }
 
     @FXML
-    void recipeClicked(MouseEvent event) {
+    void clickRecipe(MouseEvent event) {
 		Pane recipePane = (Pane) event.getSource();
 		int recipeId = Integer.parseInt(recipePane.getId());
 

@@ -13,3 +13,18 @@
 .sortTimeArrowPane:hover {
 	-fx-background-color: #ECECEC;
 }
+
+.sortSelected > .sortLabel,
+.sortSelected > .sortLabel:hover {
+	-fx-font-weight: bold;
+	-fx-font-size: 28px;
+	-fx-font-style: italic;
+}
+
+.asc > .sortImage {
+	-fx-rotate: 0;	
+}
+
+.desc > .sortImage {
+	-fx-rotate: 180;
+}
