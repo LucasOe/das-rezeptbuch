@@ -3,7 +3,7 @@
 .sortTimePane,
 .sortNameArrowPane,
 .sortTimeArrowPane {
-	-fx-background-color: #F3F3F3;
+	-fx-background-color: #F3F3F3 !important;
 }
 
 .recipePane:hover,
@@ -11,7 +11,7 @@
 .sortTimePane:hover,
 .sortNameArrowPane:hover,
 .sortTimeArrowPane:hover {
-	-fx-background-color: #ECECEC;
+	-fx-background-color: #ECECEC !important;
 }
 
 .sortSelected > .sortLabel,
