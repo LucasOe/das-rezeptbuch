@@ -20,7 +20,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
 		primaryStage.setTitle("Das Rezeptbuch");
 		primaryStage.getIcons().add(new Image("application/fxml/images/menu/Element 3@8x.png"));
-		primaryStage.setResizable(false);
+		primaryStage.setResizable(true);
         primaryStage.show();
     }
 
