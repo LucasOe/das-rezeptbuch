@@ -67,14 +67,7 @@ public class Main extends Application {
 	public static void debugPrintList(ArrayList<Recipe> recipeList) {
 		System.out.println("Rezept Liste:");
 		for (Recipe recipe : recipeList) {
-			System.out.println(recipe.getName() + " Zutaten:");
-			for (Ingredient ingredient : recipe.getIngredientList()) {
-				System.out.println("\t" + ingredient.getIngredient() + ", " + ingredient.getAmount());
-			}
-			System.out.println(recipe.getName() + " Kategorien:");
-			for (Category category : recipe.getCategoryList()) {
-				System.out.println("\t" + category.getCategory());
-			}
+			debugPrintRecipe(recipe);
 		}
 	}
 
