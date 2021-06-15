@@ -10,10 +10,15 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.effect.BlurType;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 public class RecipeListController {
 
@@ -80,10 +85,30 @@ public class RecipeListController {
 			// set pane id
 			recipePane.setId(String.valueOf(recipe.getId()));
 
+			// set name label
 			Label recipeLabelName = (Label) recipePane.lookup("#recipeLabelName");
 			recipeLabelName.setText(recipe.getName());
+
+			// set time label
 			Label recipeLabelTime = (Label) recipePane.lookup("#recipeLabelTime");
 			recipeLabelTime.setText(String.valueOf(recipe.getTime()) + "min");
+
+			// add categories
+			for (Category category : recipe.getCategoryList()) {
+				Image categoryImage = new Image(category.getCategoryImageUrl());
+				ImageView imageView = new ImageView();
+
+				imageView.setImage(categoryImage);
+				imageView.setFitWidth(47);
+				imageView.setFitHeight(47);
+				imageView.setPreserveRatio(true);
+				imageView.setEffect(new DropShadow(BlurType.THREE_PASS_BOX, new Color(0, 0, 0, 0.25), 10, 0, 0, 0));
+
+				HBox recipeCategoryList = (HBox) recipePane.lookup("#recipeCategoryList");
+				recipeCategoryList.getChildren().add(imageView);
+				/*
+				*/
+			}
 
 			hbox.getChildren().add(recipePane);
 		} catch (IOException e) {
