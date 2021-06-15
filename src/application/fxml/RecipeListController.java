@@ -151,7 +151,6 @@ public class RecipeListController {
 				break;
 			default:
 				return;
-
 		}
 	}
 
