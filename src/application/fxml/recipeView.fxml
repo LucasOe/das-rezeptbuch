@@ -20,7 +20,7 @@
          <children>
             <ImageView fx:id="recipeImageView" fitHeight="198.0" fitWidth="238.0" pickOnBounds="true">
                <image>
-                  <Image url="@images/AdobeStock_208580784_Preview.jpeg" />
+                  <Image url="@images/recipes/AdobeStock_208580784_Preview.jpeg" />
                </image>
                <viewport>
                   <Rectangle2D />
