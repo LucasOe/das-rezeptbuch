@@ -63,27 +63,59 @@ public class Database {
 			resultRecipe.next();
 
 			// Attributes
-			ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
-			ArrayList<Category> categoryList = new ArrayList<Category>();
-
 			String name = resultRecipe.getString("Name");
 			String desc = resultRecipe.getString("Beschreibung");
 			int time = resultRecipe.getInt("Zeit");
-
+			
 			// Get Zutaten List
+			ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+			ingredientList = getIngredientList(idRecipe);
+			
+			// Get Category List
+			ArrayList<Category> categoryList = new ArrayList<Category>();
+			categoryList = getCategoryList(idRecipe);
+			
+			return new Recipe(
+				idRecipe,
+				name,
+				desc,
+				time,
+				ingredientList,
+				categoryList
+			);
+		} catch(SQLException exception) {
+			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+			return null;
+		}
+	}
+
+	private ArrayList<Ingredient> getIngredientList(int idRecipe) {
+		ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+
+		try {
 			ResultSet resultIngredients = stmtInner.executeQuery("SELECT Zutat, Menge FROM zutaten LEFT JOIN rezeptliste r on r.IdRezept = zutaten.fkRezept WHERE fkRezept = " + idRecipe + ";");
 			while(resultIngredients.next()) {
 				String ingredient = resultIngredients.getString("Zutat");
 				String amount = resultIngredients.getString("Menge");
-
+	
 				// Add Ingredient to ingredientList
 				ingredientList.add(new Ingredient(
 					ingredient, 
 					amount
 				));
 			}
+	
+			return ingredientList;
+		} catch(SQLException exception) {
+			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+			return null;
+		}
+	}
 
-			// Get Category List
+	private ArrayList<Category> getCategoryList(int idRecipe) {
+		ArrayList<Category> categoryList = new ArrayList<Category>();
+
+		try {
 			ResultSet resultCategories = stmtInner.executeQuery("SELECT Kategorie FROM kategorien LEFT JOIN rezeptliste r on r.IdRezept = kategorien.fkRezept WHERE fkRezept = " + idRecipe + ";");
 			while(resultCategories.next()) {
 				String category = resultCategories.getString("Kategorie");
@@ -93,15 +125,8 @@ public class Database {
 					category
 				));
 			}
-
-			return new Recipe(
-				idRecipe,
-				name,
-				desc,
-				time,
-				ingredientList,
-				categoryList
-			);
+	
+			return categoryList;
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
 			return null;
