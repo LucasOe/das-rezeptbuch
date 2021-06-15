@@ -12,5 +12,11 @@ create table kategorien
 alter table kategorien
     add primary key (IdKategorie);
 
-INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (4, '"Fleisch"', 27);
-INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (5, '"Vegan"', 36);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (1, 'Fleischgericht', 1);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (2, 'Vegetarisch', 2);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (3, 'Vegetarisch', 3);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (4, 'Vegetarisch', 4);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (5, 'Vegetarisch', 5);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (6, 'Fleischgericht', 6);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (7, 'Fleischgericht', 7);
+INSERT INTO rezepte_test.kategorien (IdKategorie, Kategorie, fkRezept) VALUES (8, 'Vegan', 3);
