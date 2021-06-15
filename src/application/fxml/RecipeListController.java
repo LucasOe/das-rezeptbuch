@@ -63,10 +63,8 @@ public class RecipeListController {
 				// add Rezept
 				addRecipePane(hbox, recipeList.get(i));
 			} else {
-				if( hbox != null) {
-					// add Rezept
-					addRecipePane(hbox, recipeList.get(i));
-				}
+				// add Rezept
+				addRecipePane(hbox, recipeList.get(i));
 			}
 		}
 	}

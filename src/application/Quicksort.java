@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Quicksort {
+
+	private Quicksort() {
+		throw new IllegalStateException("Utility class");
+	}
+
 	// https://www.geeksforgeeks.org/java-program-for-quicksort/
 	private static int partition(int sortMode, ArrayList<Recipe> array, int low, int high) {
 		Recipe pivot = array.get(high);

@@ -2,18 +2,18 @@ package application;
 
 public class Category {
 	
-	public String category;
+	private String categoryName;
 
-	public Category(String category) {
-		this.category = category;
+	public Category(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
-	public String getCategory() {
-		return this.category;
+	public String getCategoryName() {
+		return this.categoryName;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 }

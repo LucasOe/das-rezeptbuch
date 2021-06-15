@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 	private static Database db;
-	private static ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
 	
 	@Override
     public void start(Stage primaryStage) throws Exception {
@@ -57,7 +56,7 @@ public class Main extends Application {
 			4 = descending Time
 	*/
 	public static ArrayList<Recipe> getRecipeList(int sortMode) {
-		recipeList = db.getRecipeList();
+		ArrayList<Recipe> recipeList = db.getRecipeList();
 		if(sortMode == 0) return recipeList;
 
 		Quicksort.sort(sortMode, recipeList, 0, recipeList.size()-1);
@@ -74,11 +73,11 @@ public class Main extends Application {
 	public static void debugPrintRecipe(Recipe recipe) {
 		System.out.println(recipe.getName() + " Zutaten:");
 		for (Ingredient ingredient : recipe.getIngredientList()) {
-			System.out.println("\t" + ingredient.getIngredient() + ", " + ingredient.getAmount());
+			System.out.println("\t" + ingredient.getIngredientName() + ", " + ingredient.getAmount());
 		}
 		System.out.println(recipe.getName() + " Kategorien:");
 		for (Category category : recipe.getCategoryList()) {
-			System.out.println("\t" + category.getCategory());
+			System.out.println("\t" + category.getCategoryName());
 		}
 	}
 }

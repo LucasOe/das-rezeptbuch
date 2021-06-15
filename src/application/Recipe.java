@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Recipe {
 
-	public int id = 0;
-	public String name;
-	public String desc;
-	public int time;
-	public boolean isFavorite;
-	public ArrayList<Ingredient> ingredientList;
-	public ArrayList<Category> categoryList;
+	private int id = 0;
+	private String name;
+	private String desc;
+	private int time;
+	private boolean isFavorite;
+	private ArrayList<Ingredient> ingredientList;
+	private ArrayList<Category> categoryList;
 
 	public Recipe(
 		int id,

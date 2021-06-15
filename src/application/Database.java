@@ -23,12 +23,12 @@ public class Database {
 	}
 
 	private ArrayList<Integer> getRecipeIdList() {
-		ArrayList<Integer> recipeIdList = new ArrayList<Integer>();
+		ArrayList<Integer> recipeIdList = new ArrayList<>();
 
 		try {
 			ResultSet resultIds = stmt.executeQuery("SELECT IdRezept FROM rezeptliste;");
 			while(resultIds.next()) {
-				int idRecipe = resultIds.getInt("IdRezept");
+				var idRecipe = resultIds.getInt("IdRezept");
 
 				recipeIdList.add(idRecipe);
 			}
@@ -36,7 +36,7 @@ public class Database {
 			return recipeIdList;
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
-			return null;
+			return new ArrayList<>();
 		}
 	}
 
@@ -46,11 +46,16 @@ public class Database {
 			stmt.execute("INSERT INTO rezeptliste (Name, Zeit, Favorit, Beschreibung) VALUES ('" + recipe.getName() + "', " + recipe.getTime() + ", '" + 0 + "', '" + recipe.getDesc() + "');");
 			ResultSet resultId = stmt.executeQuery("select LAST_INSERT_ID() AS IdRezept");
 			resultId.next();
-			int idRecipe = resultId.getInt("IdRezept");
+			var idRecipe = resultId.getInt("IdRezept");
 			
 			// Add Ingredient
 			for (Ingredient ingredient : recipe.getIngredientList()) {
-				stmt.execute("INSERT INTO zutaten (Zutat, Menge, fkRezept) VALUES ('" + ingredient.getIngredient() + "', '" + ingredient.getAmount() + "', " + idRecipe + ")");
+				stmt.execute("INSERT INTO zutaten (Zutat, Menge, fkRezept) VALUES ('" + ingredient.getIngredientName() + "', '" + ingredient.getAmount() + "', " + idRecipe + ")");
+			}
+
+			// Add Category
+			for (Category category : recipe.getCategoryList()) {
+				stmt.execute("INSERT INTO kategorien (Kategorie, fkRezept) VALUES ('" + category.getCategoryName() + "', " + idRecipe + ")");
 			}
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
@@ -63,17 +68,11 @@ public class Database {
 			resultRecipe.next();
 
 			// Attributes
-			String name = resultRecipe.getString("Name");
-			String desc = resultRecipe.getString("Beschreibung");
-			int time = resultRecipe.getInt("Zeit");
-			
-			// Get Zutaten List
-			ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
-			ingredientList = getIngredientList(idRecipe);
-			
-			// Get Category List
-			ArrayList<Category> categoryList = new ArrayList<Category>();
-			categoryList = getCategoryList(idRecipe);
+			var name = resultRecipe.getString("Name");
+			var desc = resultRecipe.getString("Beschreibung");
+			var time = resultRecipe.getInt("Zeit");
+			ArrayList<Ingredient> ingredientList =  getIngredientList(idRecipe);
+			ArrayList<Category> categoryList = getCategoryList(idRecipe);
 			
 			return new Recipe(
 				idRecipe,
@@ -90,13 +89,13 @@ public class Database {
 	}
 
 	private ArrayList<Ingredient> getIngredientList(int idRecipe) {
-		ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+		ArrayList<Ingredient> ingredientList = new ArrayList<>();
 
 		try {
 			ResultSet resultIngredients = stmtInner.executeQuery("SELECT Zutat, Menge FROM zutaten LEFT JOIN rezeptliste r on r.IdRezept = zutaten.fkRezept WHERE fkRezept = " + idRecipe + ";");
 			while(resultIngredients.next()) {
-				String ingredient = resultIngredients.getString("Zutat");
-				String amount = resultIngredients.getString("Menge");
+				var ingredient = resultIngredients.getString("Zutat");
+				var amount = resultIngredients.getString("Menge");
 	
 				// Add Ingredient to ingredientList
 				ingredientList.add(new Ingredient(
@@ -108,17 +107,17 @@ public class Database {
 			return ingredientList;
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
-			return null;
+			return new ArrayList<>();
 		}
 	}
 
 	private ArrayList<Category> getCategoryList(int idRecipe) {
-		ArrayList<Category> categoryList = new ArrayList<Category>();
+		ArrayList<Category> categoryList = new ArrayList<>();
 
 		try {
 			ResultSet resultCategories = stmtInner.executeQuery("SELECT Kategorie FROM kategorien LEFT JOIN rezeptliste r on r.IdRezept = kategorien.fkRezept WHERE fkRezept = " + idRecipe + ";");
 			while(resultCategories.next()) {
-				String category = resultCategories.getString("Kategorie");
+				var category = resultCategories.getString("Kategorie");
 
 				// Add Category to categoryList
 				categoryList.add(new Category(
@@ -129,16 +128,16 @@ public class Database {
 			return categoryList;
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
-			return null;
+			return new ArrayList<>();
 		}
 	}
 
 	public ArrayList<Recipe> getRecipeList() {
-		ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
+		ArrayList<Recipe> recipeList = new ArrayList<>();
 
 		ArrayList<Integer> recipeIdList = getRecipeIdList();
 		for (Integer idRecipe : recipeIdList) {
-			Recipe recipe = getRecipe(idRecipe);
+			var recipe = getRecipe(idRecipe);
 
 			recipeList.add(recipe);
 		}

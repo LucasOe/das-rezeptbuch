@@ -2,23 +2,23 @@ package application;
 
 public class Ingredient {
 	
-	public String ingredient;
-	public String amount;
+	private String ingredientName;
+	private String amount;
 
 	public Ingredient(
-		String ingredient,
+		String ingredientName,
 		String amount
 	) {
-		this.ingredient = ingredient;
+		this.ingredientName = ingredientName;
 		this.amount = amount;
 	}
 
-	public String getIngredient() {
-		return this.ingredient;
+	public String getIngredientName() {
+		return this.ingredientName;
 	}
 
-	public void setIngredient(String ingredient) {
-		this.ingredient = ingredient;
+	public void setIngredientName(String ingredientName) {
+		this.ingredientName = ingredientName;
 	}
 
 	public String getAmount() {
