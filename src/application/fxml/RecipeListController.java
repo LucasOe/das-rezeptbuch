@@ -42,6 +42,10 @@ public class RecipeListController {
 	private boolean isNameAsc = true;
 	private boolean isTimeAsc = true;
 
+	private static final String CSS_SORT_SELECTED = "sortSelected";
+	private static final String CSS_SORT_ASC = "asc";
+	private static final String CSS_SORT_DESC = "desc";
+
     @FXML
     void initialize() {
 		Main.connect();
@@ -98,32 +102,32 @@ public class RecipeListController {
 		switch(method) {
 			case 1:
 				removeSortClasses(method);
-				sortNameLabel.getStyleClass().add("sortSelected");
+				sortNameLabel.getStyleClass().add(CSS_SORT_SELECTED);
 
 				isNameAsc = isAsc;
 
 				if(isAsc) {
-					sortNameArrow.getStyleClass().add("asc");
+					sortNameArrow.getStyleClass().add(CSS_SORT_ASC);
 					updateRecipePanes(1);
 				}
 				else {
-					sortNameArrow.getStyleClass().add("desc");
+					sortNameArrow.getStyleClass().add(CSS_SORT_DESC);
 					updateRecipePanes(2);
 				} 
 
 				break;
 			case 2:
 				removeSortClasses(method);
-				sortTimeLabel.getStyleClass().add("sortSelected");
+				sortTimeLabel.getStyleClass().add(CSS_SORT_SELECTED);
 
 				isTimeAsc = isAsc;
 
 				if(isAsc) {
-					sortTimeArrow.getStyleClass().add("asc");
+					sortTimeArrow.getStyleClass().add(CSS_SORT_ASC);
 					updateRecipePanes(3);
 				} 
 				else {
-					sortTimeArrow.getStyleClass().add("desc");
+					sortTimeArrow.getStyleClass().add(CSS_SORT_DESC);
 					updateRecipePanes(4);
 				}
 
@@ -134,16 +138,16 @@ public class RecipeListController {
 	}
 
 	private void removeSortClasses(int method) {
-		sortNameLabel.getStyleClass().remove("sortSelected");
-		sortTimeLabel.getStyleClass().remove("sortSelected");
+		sortNameLabel.getStyleClass().remove(CSS_SORT_SELECTED);
+		sortTimeLabel.getStyleClass().remove(CSS_SORT_SELECTED);
 		switch(method) {
 			case 1:
-				sortNameArrow.getStyleClass().remove("asc");
-				sortNameArrow.getStyleClass().remove("desc");
+				sortNameArrow.getStyleClass().remove(CSS_SORT_ASC);
+				sortNameArrow.getStyleClass().remove(CSS_SORT_DESC);
 				break;
 			case 2:
-				sortTimeArrow.getStyleClass().remove("asc");
-				sortTimeArrow.getStyleClass().remove("desc");
+				sortTimeArrow.getStyleClass().remove(CSS_SORT_ASC);
+				sortTimeArrow.getStyleClass().remove(CSS_SORT_DESC);
 				break;
 			default:
 				return;
