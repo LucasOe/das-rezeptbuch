@@ -71,6 +71,10 @@ public class Main extends Application {
 			for (Ingredient ingredient : recipe.getIngredientList()) {
 				System.out.println("\t" + ingredient.getIngredient() + ", " + ingredient.getAmount());
 			}
+			System.out.println(recipe.getName() + " Kategorien:");
+			for (Category category : recipe.getCategoryList()) {
+				System.out.println("\t" + category.getCategory());
+			}
 		}
 	}
 
@@ -78,6 +82,10 @@ public class Main extends Application {
 		System.out.println(recipe.getName() + " Zutaten:");
 		for (Ingredient ingredient : recipe.getIngredientList()) {
 			System.out.println("\t" + ingredient.getIngredient() + ", " + ingredient.getAmount());
+		}
+		System.out.println(recipe.getName() + " Kategorien:");
+		for (Category category : recipe.getCategoryList()) {
+			System.out.println("\t" + category.getCategory());
 		}
 	}
 }

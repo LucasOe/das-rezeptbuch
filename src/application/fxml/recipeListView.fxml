@@ -44,7 +44,7 @@
             </BorderPane>
          </children>
          <padding>
-            <Insets left="19.0" />
+            <Insets left="19.0" right="19.0" />
          </padding>
       </StackPane>
    </center>
@@ -57,6 +57,13 @@
                      <image>
                         <Image url="@images/menu/Element%203@8x.png" />
                      </image>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.1599999964237213" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
                </children>
             </Pane>
@@ -161,7 +168,7 @@
                   <Insets />
                </HBox.margin>
                <padding>
-                  <Insets left="19.0" />
+                  <Insets left="19.0" right="19.0" />
                </padding>
             </HBox>
          </children>

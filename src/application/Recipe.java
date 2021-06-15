@@ -10,19 +10,22 @@ public class Recipe {
 	public int time;
 	public boolean isFavorite;
 	public ArrayList<Ingredient> ingredientList;
+	public ArrayList<Category> categoryList;
 
 	public Recipe(
 		int id,
 		String name,
 		String desc,
 		int time,
-		ArrayList<Ingredient> ingredientList
+		ArrayList<Ingredient> ingredientList,
+		ArrayList<Category> categoryList
 	) {
 		this.id = id;
 		this.name = name;
 		this.desc = desc;
 		this.time = time;
 		this.ingredientList = ingredientList;
+		this.categoryList = categoryList;
 	}
 
 	public int getId() {
@@ -71,5 +74,13 @@ public class Recipe {
 
 	public void setIngredientList(ArrayList<Ingredient> ingredientList) {
 		this.ingredientList = ingredientList;
+	}
+
+	public ArrayList<Category> getCategoryList() {
+		return this.categoryList;
+	}
+
+	public void setCategoryList(ArrayList<Category> categoryList) {
+		this.categoryList = categoryList;
 	}
 }
