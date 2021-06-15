@@ -57,7 +57,7 @@ public class Main extends Application {
 			4 = descending Time
 	*/
 	public static ArrayList<Recipe> getRecipeList(int sortMode) {
-		recipeList = db.readRecipes();
+		recipeList = db.getRecipeList();
 		if(sortMode == 0) return recipeList;
 
 		Quicksort.sort(sortMode, recipeList, 0, recipeList.size()-1);
