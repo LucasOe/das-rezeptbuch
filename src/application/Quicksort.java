@@ -15,22 +15,12 @@ public class Quicksort {
 		int i = low-1;
 		for(int j=low; j < high; j++) {
 			// sort mode ascending name
-			if(sortMode == 1 && array.get(j).getName().compareToIgnoreCase(pivot.getName()) <= 0) {
-				i++;
-				Collections.swap(array, i, j); // swap array[i] and array[j]
-			}
-			// sort mode descending name
-			else if(sortMode == 2 && array.get(j).getName().compareToIgnoreCase(pivot.getName()) >= 0) {
-				i++;
-				Collections.swap(array, i, j); // swap array[i] and array[j]
-			}
-			// sort mode ascending time
-			else if(sortMode == 3 && array.get(j).getTime() <= pivot.getTime()) {
-				i++;
-				Collections.swap(array, i, j); // swap array[i] and array[j]
-			}
-			// sort mode descending time
-			else if(sortMode == 4 && array.get(j).getTime() >= pivot.getTime()) {
+			if(
+				sortMode == 1 && array.get(j).getName().compareToIgnoreCase(pivot.getName()) <= 0 ||	// sort by name ascending
+				sortMode == 2 && array.get(j).getName().compareToIgnoreCase(pivot.getName()) >= 0 ||	// sort by name descending
+				sortMode == 3 && array.get(j).getTime() <= pivot.getTime() ||							// sort by time ascending
+				sortMode == 4 && array.get(j).getTime() >= pivot.getTime()								// sort by time descending
+			) {
 				i++;
 				Collections.swap(array, i, j); // swap array[i] and array[j]
 			}
