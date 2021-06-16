@@ -59,7 +59,13 @@ public class Main extends Application {
 		ArrayList<Recipe> recipeList = db.getRecipeList();
 		if(sortMode == 0) return recipeList;
 
-		Quicksort.sort(sortMode, recipeList, 0, recipeList.size()-1);
+		if(sortMode == 1 || sortMode == 2) {
+			Quicksort.sort(sortMode, recipeList, 0, recipeList.size()-1);
+		}
+		if(sortMode == 3 || sortMode == 4) {
+			Mergesort.sort(sortMode, recipeList, 0, recipeList.size()-1);
+		}
+
 		return recipeList;
 	}
 

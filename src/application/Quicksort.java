@@ -34,11 +34,8 @@ public class Quicksort {
 
 	/*
 	sortMode:
-		0 = disabled
 		1 = ascending Name
 		2 = descending Name
-		3 = ascending Time
-		4 = descending Time
 	*/
 	public static void sort(int sortMode, ArrayList<Recipe> array, int low, int high) {
 		if(low < high) {
