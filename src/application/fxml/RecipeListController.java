@@ -1,6 +1,7 @@
 package application.fxml;
 
 import application.*;
+import application.recipe.Recipe;
 
 import java.io.IOException;
 import java.net.URL;
@@ -109,6 +110,9 @@ public class RecipeListController {
 				/*
 				*/
 			}
+
+			// set background color
+			recipePane.getStylesheets().add(recipe.getStylesheet());
 
 			hbox.getChildren().add(recipePane);
 		} catch (IOException e) {

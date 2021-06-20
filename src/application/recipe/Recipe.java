@@ -1,8 +1,11 @@
-package application;
+package application.recipe;
 
 import java.util.ArrayList;
 
-public class Recipe {
+import application.Category;
+import application.Ingredient;
+
+public abstract class Recipe {
 
 	private int id = 0;
 	private String name;
@@ -12,7 +15,7 @@ public class Recipe {
 	private ArrayList<Ingredient> ingredientList;
 	private ArrayList<Category> categoryList;
 
-	public Recipe(
+	protected Recipe(
 		int id,
 		String name,
 		String desc,
@@ -26,6 +29,10 @@ public class Recipe {
 		this.time = time;
 		this.ingredientList = ingredientList;
 		this.categoryList = categoryList;
+	}
+
+	public String getStylesheet() {
+		return null;
 	}
 
 	public int getId() {

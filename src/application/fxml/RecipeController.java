@@ -1,6 +1,7 @@
 package application.fxml;
 
 import application.*;
+import application.recipe.Recipe;
 
 import java.net.URL;
 import java.util.ResourceBundle;

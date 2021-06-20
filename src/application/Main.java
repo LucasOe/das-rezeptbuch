@@ -1,6 +1,8 @@
 package application;
 	
 import java.util.ArrayList;
+
+import application.recipe.Recipe;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

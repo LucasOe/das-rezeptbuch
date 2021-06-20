@@ -1,0 +1,7 @@
+.recipePane {
+	-fx-background-color: #edd6d3 !important;
+}
+
+.recipePane:hover {
+	-fx-background-color: #e8d1cf !important;
+}

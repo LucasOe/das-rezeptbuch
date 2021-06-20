@@ -3,6 +3,8 @@ package application;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import application.recipe.Recipe;
+
 public class Quicksort {
 
 	private Quicksort() {

@@ -2,6 +2,8 @@ package application;
 
 import java.util.ArrayList;
 
+import application.recipe.Recipe;
+
 public class Mergesort {
 
 	private Mergesort() {

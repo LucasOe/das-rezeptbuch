@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.*;
 
+import application.recipe.*;
+
 public class Database {
 
 	Connection connection;
@@ -74,18 +76,39 @@ public class Database {
 			ArrayList<Ingredient> ingredientList =  getIngredientList(idRecipe);
 			ArrayList<Category> categoryList = getCategoryList(idRecipe);
 			
-			return new Recipe(
-				idRecipe,
-				name,
-				desc,
-				time,
-				ingredientList,
-				categoryList
-			);
+			if(hasCategory(categoryList, "Fleischgericht")) {
+				return new RecipeMeat(
+					idRecipe,
+					name,
+					desc,
+					time,
+					ingredientList,
+					categoryList
+				);
+			} else {
+				return new RecipeVegetarian(
+					idRecipe,
+					name,
+					desc,
+					time,
+					ingredientList,
+					categoryList
+				);
+			}
+
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
 			return null;
 		}
+	}
+
+	private boolean hasCategory(ArrayList<Category> categoryList, String categoryName) {
+		for (Category category : categoryList) {
+			if(category.getCategoryName().equals(categoryName)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private ArrayList<Ingredient> getIngredientList(int idRecipe) {
