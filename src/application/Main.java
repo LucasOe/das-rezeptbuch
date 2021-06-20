@@ -2,6 +2,7 @@ package application;
 	
 import java.util.ArrayList;
 
+import application.category.Category;
 import application.recipe.Recipe;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,6 +1,7 @@
 package application.fxml;
 
 import application.*;
+import application.category.Category;
 import application.recipe.Recipe;
 
 import java.io.IOException;
@@ -10,7 +11,9 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -105,8 +108,14 @@ public class RecipeListController {
 				imageView.setPreserveRatio(true);
 				imageView.setEffect(new DropShadow(BlurType.THREE_PASS_BOX, new Color(0, 0, 0, 0.25), 10, 0, 0, 0));
 
+				// Tooltip workaround
+				Label tooltipLabel = new Label();
+				tooltipLabel.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+				tooltipLabel.setGraphic(imageView);
+				tooltipLabel.setTooltip(new Tooltip(category.getCategoryName()));
+
 				HBox recipeCategoryList = (HBox) recipePane.lookup("#recipeCategoryList");
-				recipeCategoryList.getChildren().add(imageView);
+				recipeCategoryList.getChildren().add(tooltipLabel);
 				/*
 				*/
 			}

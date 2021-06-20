@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.*;
 
+import application.category.*;
 import application.recipe.*;
 
 public class Database {
@@ -143,15 +144,34 @@ public class Database {
 				var category = resultCategories.getString("Kategorie");
 
 				// Add Category to categoryList
-				categoryList.add(new Category(
-					category
-				));
+				categoryList.add(getCategoryClass(category));
 			}
 	
 			return categoryList;
 		} catch(SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
 			return new ArrayList<>();
+		}
+	}
+
+	private Category getCategoryClass(String category) {
+		switch(category) {
+			case "Dessert":
+				return new CategoryDessert(category);
+			case "Getränk":
+				return new CategoryDrink(category);
+			case "Fischgericht":
+				return new CategoryFish(category);
+			case "Fleischgericht":
+				return new CategoryMeat(category);
+			case "Suppe":
+				return new CategorySoup(category);
+			case "Vegan":
+				return new CategoryVegan(category);
+			case "Vegetarisch":
+				return new CategoryVegetarian(category);
+			default:
+				return null;
 		}
 	}
 

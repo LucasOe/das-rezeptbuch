@@ -2,8 +2,8 @@ package application.recipe;
 
 import java.util.ArrayList;
 
-import application.Category;
 import application.Ingredient;
+import application.category.Category;
 
 public abstract class Recipe {
 
