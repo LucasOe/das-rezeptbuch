@@ -1,14 +1,11 @@
 package application;
 
 public class Ingredient {
-	
+
 	private String ingredientName;
 	private String amount;
 
-	public Ingredient(
-		String ingredientName,
-		String amount
-	) {
+	public Ingredient(String ingredientName, String amount) {
 		this.ingredientName = ingredientName;
 		this.amount = amount;
 	}

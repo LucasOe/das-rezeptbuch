@@ -2,14 +2,14 @@
 .sortTimePane,
 .sortNameArrowPane,
 .sortTimeArrowPane {
-	-fx-background-color: #F3F3F3 !important;
+	-fx-background-color: #f3f3f3 !important;
 }
 
 .sortNamePane:hover,
 .sortTimePane:hover,
 .sortNameArrowPane:hover,
 .sortTimeArrowPane:hover {
-	-fx-background-color: #ECECEC !important;
+	-fx-background-color: #ececec !important;
 }
 
 .sortSelected > .sortLabel,
@@ -20,7 +20,7 @@
 }
 
 .asc > .sortImage {
-	-fx-rotate: 0;	
+	-fx-rotate: 0;
 }
 
 .desc > .sortImage {

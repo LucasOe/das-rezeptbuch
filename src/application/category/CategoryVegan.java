@@ -10,5 +10,5 @@ public class CategoryVegan extends Category {
 	public String getCategoryImageUrl() {
 		return "application/fxml/images/categories/Element 45@8x.png";
 	}
-	
+
 }

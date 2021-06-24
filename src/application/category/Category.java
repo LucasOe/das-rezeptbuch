@@ -1,7 +1,7 @@
 package application.category;
 
 public abstract class Category {
-	
+
 	private String categoryName;
 
 	protected Category(String categoryName) {

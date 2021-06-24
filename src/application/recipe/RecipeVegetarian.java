@@ -7,15 +7,8 @@ import application.category.Category;
 
 public class RecipeVegetarian extends Recipe {
 
-	public RecipeVegetarian(
-		int id,
-		String name,
-		String desc,
-		int time,
-		ArrayList<Ingredient> ingredientList,
-		ArrayList<Category> categoryList,
-		String imageUrl
-	) {
+	public RecipeVegetarian(int id, String name, String desc, int time, ArrayList<Ingredient> ingredientList,
+			ArrayList<Category> categoryList, String imageUrl) {
 		super(id, name, desc, time, ingredientList, categoryList, imageUrl);
 	}
 
@@ -24,4 +17,3 @@ public class RecipeVegetarian extends Recipe {
 		return "application/fxml/stylesheetVegetarian.css";
 	}
 }
-

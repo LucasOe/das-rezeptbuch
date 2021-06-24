@@ -26,11 +26,11 @@ import javafx.scene.paint.Color;
 
 public class RecipeListController {
 
-    @FXML
-    private ResourceBundle resources;
+	@FXML
+	private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+	@FXML
+	private URL location;
 
 	@FXML
 	private VBox recipeListView;
@@ -55,16 +55,16 @@ public class RecipeListController {
 	private static final String CSS_SORT_ASC = "asc";
 	private static final String CSS_SORT_DESC = "desc";
 
-    @FXML
-    void initialize() {
+	@FXML
+	void initialize() {
 		Main.connect();
 		updateSortButtons(sortMethod, isNameAsc);
-    }
+	}
 
 	private void addRecipes(ArrayList<Recipe> recipeList) {
 		HBox hbox = null;
 		for (int i = 0; i < recipeList.size(); i++) {
-			if(i % 2 == 0) {
+			if (i % 2 == 0) {
 				// create hbox
 				hbox = new HBox();
 
@@ -142,78 +142,76 @@ public class RecipeListController {
 
 	private void updateSortButtons(int method, boolean isAsc) {
 		sortMethod = method;
-		switch(method) {
-			case 1:
-				removeSortClasses(method);
-				sortNameLabel.getStyleClass().add(CSS_SORT_SELECTED);
+		switch (method) {
+		case 1:
+			removeSortClasses(method);
+			sortNameLabel.getStyleClass().add(CSS_SORT_SELECTED);
 
-				isNameAsc = isAsc;
+			isNameAsc = isAsc;
 
-				if(isAsc) {
-					sortNameArrow.getStyleClass().add(CSS_SORT_ASC);
-					updateRecipePanes(1);
-				}
-				else {
-					sortNameArrow.getStyleClass().add(CSS_SORT_DESC);
-					updateRecipePanes(2);
-				} 
+			if (isAsc) {
+				sortNameArrow.getStyleClass().add(CSS_SORT_ASC);
+				updateRecipePanes(1);
+			} else {
+				sortNameArrow.getStyleClass().add(CSS_SORT_DESC);
+				updateRecipePanes(2);
+			}
 
-				break;
-			case 2:
-				removeSortClasses(method);
-				sortTimeLabel.getStyleClass().add(CSS_SORT_SELECTED);
+			break;
+		case 2:
+			removeSortClasses(method);
+			sortTimeLabel.getStyleClass().add(CSS_SORT_SELECTED);
 
-				isTimeAsc = isAsc;
+			isTimeAsc = isAsc;
 
-				if(isAsc) {
-					sortTimeArrow.getStyleClass().add(CSS_SORT_ASC);
-					updateRecipePanes(3);
-				} 
-				else {
-					sortTimeArrow.getStyleClass().add(CSS_SORT_DESC);
-					updateRecipePanes(4);
-				}
+			if (isAsc) {
+				sortTimeArrow.getStyleClass().add(CSS_SORT_ASC);
+				updateRecipePanes(3);
+			} else {
+				sortTimeArrow.getStyleClass().add(CSS_SORT_DESC);
+				updateRecipePanes(4);
+			}
 
-				break;
-			default:
-				return;
+			break;
+		default:
+			return;
 		}
 	}
 
 	private void removeSortClasses(int method) {
 		sortNameLabel.getStyleClass().remove(CSS_SORT_SELECTED);
 		sortTimeLabel.getStyleClass().remove(CSS_SORT_SELECTED);
-		switch(method) {
-			case 1:
-				sortNameArrow.getStyleClass().remove(CSS_SORT_ASC);
-				sortNameArrow.getStyleClass().remove(CSS_SORT_DESC);
-				break;
-			case 2:
-				sortTimeArrow.getStyleClass().remove(CSS_SORT_ASC);
-				sortTimeArrow.getStyleClass().remove(CSS_SORT_DESC);
-				break;
-			default:
-				return;
+		switch (method) {
+		case 1:
+			sortNameArrow.getStyleClass().remove(CSS_SORT_ASC);
+			sortNameArrow.getStyleClass().remove(CSS_SORT_DESC);
+			break;
+		case 2:
+			sortTimeArrow.getStyleClass().remove(CSS_SORT_ASC);
+			sortTimeArrow.getStyleClass().remove(CSS_SORT_DESC);
+			break;
+		default:
+			return;
 		}
 	}
 
 	@FXML
-    void clickSortNameLabel(MouseEvent event) {
+	void clickSortNameLabel(MouseEvent event) {
 		updateSortButtons(1, isNameAsc);
 	}
 
 	@FXML
-    void clickSortTimeLabel(MouseEvent event) {
+	void clickSortTimeLabel(MouseEvent event) {
 		updateSortButtons(2, isTimeAsc);
 	}
 
 	@FXML
-    void clickSortNameArrow(MouseEvent event) {
+	void clickSortNameArrow(MouseEvent event) {
 		updateSortButtons(1, !isNameAsc);
 	}
 
 	@FXML
-    void clickSortTimeArrow(MouseEvent event) {
+	void clickSortTimeArrow(MouseEvent event) {
 		updateSortButtons(2, !isTimeAsc);
 	}
 }

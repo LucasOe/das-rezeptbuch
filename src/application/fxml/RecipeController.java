@@ -15,37 +15,35 @@ import javafx.scene.shape.Rectangle;
 
 public class RecipeController {
 
-    @FXML
-    private ResourceBundle resources;
+	@FXML
+	private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+	@FXML
+	private URL location;
 
-    @FXML
-    private Label recipeLabelName;
+	@FXML
+	private Label recipeLabelName;
 
 	@FXML
 	private ImageView recipeImageView;
 
-    @FXML
-    void initialize() {
+	@FXML
+	void initialize() {
 		clipImage();
-    }
+	}
 
-    @FXML
-    void clickRecipe(MouseEvent event) {
+	@FXML
+	void clickRecipe(MouseEvent event) {
 		Pane recipePane = (Pane) event.getSource();
 		int recipeId = Integer.parseInt(recipePane.getId());
 
 		Recipe recipe = Main.getRecipe(recipeId);
 		Main.debugPrintRecipe(recipe);
-    }
+	}
 
 	private void clipImage() {
 		// create clip rectangle
-		Rectangle clip = new Rectangle(
-			recipeImageView.getFitWidth(), recipeImageView.getFitHeight()
-		);
+		Rectangle clip = new Rectangle(recipeImageView.getFitWidth(), recipeImageView.getFitHeight());
 		clip.setArcWidth(30);
 		clip.setArcHeight(30);
 		// clip image to rectangle

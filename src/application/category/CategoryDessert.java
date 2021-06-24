@@ -10,5 +10,5 @@ public class CategoryDessert extends Category {
 	public String getCategoryImageUrl() {
 		return "application/fxml/images/categories/Element 28@8x.png";
 	}
-	
+
 }

@@ -16,15 +16,8 @@ public abstract class Recipe {
 	private ArrayList<Category> categoryList;
 	private String imageUrl;
 
-	protected Recipe(
-		int id,
-		String name,
-		String desc,
-		int time,
-		ArrayList<Ingredient> ingredientList,
-		ArrayList<Category> categoryList,
-		String imageUrl
-	) {
+	protected Recipe(int id, String name, String desc, int time, ArrayList<Ingredient> ingredientList,
+			ArrayList<Category> categoryList, String imageUrl) {
 		this.id = id;
 		this.name = name;
 		this.desc = desc;
