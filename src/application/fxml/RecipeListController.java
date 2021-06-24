@@ -97,6 +97,11 @@ public class RecipeListController {
 			Label recipeLabelTime = (Label) recipePane.lookup("#recipeLabelTime");
 			recipeLabelTime.setText(String.valueOf(recipe.getTime()) + "min");
 
+			// set image
+			ImageView recipeImageView = (ImageView) recipePane.lookup("#recipeImageView");
+			Image recipeImage = new Image("application/fxml/images/recipes/" + recipe.getImageUrl());
+			recipeImageView.setImage(recipeImage);
+
 			// add categories
 			for (Category category : recipe.getCategoryList()) {
 				Image categoryImage = new Image(category.getCategoryImageUrl());

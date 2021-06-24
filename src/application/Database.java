@@ -46,7 +46,7 @@ public class Database {
 	public void addRecipe(Recipe recipe) {
 		try {
 			// Add Recipe
-			stmt.execute("INSERT INTO rezeptliste (Name, Zeit, Favorit, Beschreibung) VALUES ('" + recipe.getName() + "', " + recipe.getTime() + ", '" + 0 + "', '" + recipe.getDesc() + "');");
+			stmt.execute("INSERT INTO rezeptliste (Name, Zeit, Favorit, Beschreibung, BildUrl) VALUES ('" + recipe.getName() + "', " + recipe.getTime() + ", '" + 0 + "', '" + recipe.getDesc() + "', " + recipe.getImageUrl() + "');");
 			ResultSet resultId = stmt.executeQuery("select LAST_INSERT_ID() AS IdRezept");
 			resultId.next();
 			var idRecipe = resultId.getInt("IdRezept");
@@ -74,6 +74,7 @@ public class Database {
 			var name = resultRecipe.getString("Name");
 			var desc = resultRecipe.getString("Beschreibung");
 			var time = resultRecipe.getInt("Zeit");
+			var imageUrl = resultRecipe.getString("BildUrl");
 			ArrayList<Ingredient> ingredientList =  getIngredientList(idRecipe);
 			ArrayList<Category> categoryList = getCategoryList(idRecipe);
 			
@@ -84,7 +85,8 @@ public class Database {
 					desc,
 					time,
 					ingredientList,
-					categoryList
+					categoryList,
+					imageUrl
 				);
 			} else {
 				return new RecipeVegetarian(
@@ -93,7 +95,8 @@ public class Database {
 					desc,
 					time,
 					ingredientList,
-					categoryList
+					categoryList,
+					imageUrl
 				);
 			}
 

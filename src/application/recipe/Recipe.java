@@ -14,6 +14,7 @@ public abstract class Recipe {
 	private boolean isFavorite;
 	private ArrayList<Ingredient> ingredientList;
 	private ArrayList<Category> categoryList;
+	private String imageUrl;
 
 	protected Recipe(
 		int id,
@@ -21,7 +22,8 @@ public abstract class Recipe {
 		String desc,
 		int time,
 		ArrayList<Ingredient> ingredientList,
-		ArrayList<Category> categoryList
+		ArrayList<Category> categoryList,
+		String imageUrl
 	) {
 		this.id = id;
 		this.name = name;
@@ -29,6 +31,7 @@ public abstract class Recipe {
 		this.time = time;
 		this.ingredientList = ingredientList;
 		this.categoryList = categoryList;
+		this.imageUrl = imageUrl;
 	}
 
 	public String getStylesheet() {
@@ -89,5 +92,13 @@ public abstract class Recipe {
 
 	public void setCategoryList(ArrayList<Category> categoryList) {
 		this.categoryList = categoryList;
+	}
+
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 }

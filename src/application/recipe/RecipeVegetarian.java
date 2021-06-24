@@ -13,8 +13,10 @@ public class RecipeVegetarian extends Recipe {
 		String desc,
 		int time,
 		ArrayList<Ingredient> ingredientList,
-		ArrayList<Category> categoryList) {
-		super(id, name, desc, time, ingredientList, categoryList);
+		ArrayList<Category> categoryList,
+		String imageUrl
+	) {
+		super(id, name, desc, time, ingredientList, categoryList, imageUrl);
 	}
 
 	@Override

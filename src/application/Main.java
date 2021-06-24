@@ -80,11 +80,11 @@ public class Main extends Application {
 	}
 
 	public static void debugPrintRecipe(Recipe recipe) {
-		System.out.println(recipe.getName() + " Zutaten:");
+		System.out.println("Name: " + recipe.getName() + "\nBildUrl: " + recipe.getImageUrl() + "\nZutaten:");
 		for (Ingredient ingredient : recipe.getIngredientList()) {
 			System.out.println("\t" + ingredient.getIngredientName() + ", " + ingredient.getAmount());
 		}
-		System.out.println(recipe.getName() + " Kategorien:");
+		System.out.println("Kategorien:");
 		for (Category category : recipe.getCategoryList()) {
 			System.out.println("\t" + category.getCategoryName());
 		}
