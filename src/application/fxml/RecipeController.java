@@ -1,11 +1,10 @@
 package application.fxml;
 
-import application.*;
-import application.recipe.Recipe;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
+import application.recipe.Recipe;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;

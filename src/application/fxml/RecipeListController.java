@@ -1,14 +1,13 @@
 package application.fxml;
 
-import application.*;
-import application.category.Category;
-import application.recipe.Recipe;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import application.Main;
+import application.category.Category;
+import application.recipe.Recipe;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ContentDisplay;
@@ -143,38 +142,38 @@ public class RecipeListController {
 	private void updateSortButtons(int method, boolean isAsc) {
 		sortMethod = method;
 		switch (method) {
-		case 1:
-			removeSortClasses(method);
-			sortNameLabel.getStyleClass().add(CSS_SORT_SELECTED);
+			case 1:
+				removeSortClasses(method);
+				sortNameLabel.getStyleClass().add(CSS_SORT_SELECTED);
 
-			isNameAsc = isAsc;
+				isNameAsc = isAsc;
 
-			if (isAsc) {
-				sortNameArrow.getStyleClass().add(CSS_SORT_ASC);
-				updateRecipePanes(1);
-			} else {
-				sortNameArrow.getStyleClass().add(CSS_SORT_DESC);
-				updateRecipePanes(2);
-			}
+				if (isAsc) {
+					sortNameArrow.getStyleClass().add(CSS_SORT_ASC);
+					updateRecipePanes(1);
+				} else {
+					sortNameArrow.getStyleClass().add(CSS_SORT_DESC);
+					updateRecipePanes(2);
+				}
 
-			break;
-		case 2:
-			removeSortClasses(method);
-			sortTimeLabel.getStyleClass().add(CSS_SORT_SELECTED);
+				break;
+			case 2:
+				removeSortClasses(method);
+				sortTimeLabel.getStyleClass().add(CSS_SORT_SELECTED);
 
-			isTimeAsc = isAsc;
+				isTimeAsc = isAsc;
 
-			if (isAsc) {
-				sortTimeArrow.getStyleClass().add(CSS_SORT_ASC);
-				updateRecipePanes(3);
-			} else {
-				sortTimeArrow.getStyleClass().add(CSS_SORT_DESC);
-				updateRecipePanes(4);
-			}
+				if (isAsc) {
+					sortTimeArrow.getStyleClass().add(CSS_SORT_ASC);
+					updateRecipePanes(3);
+				} else {
+					sortTimeArrow.getStyleClass().add(CSS_SORT_DESC);
+					updateRecipePanes(4);
+				}
 
-			break;
-		default:
-			return;
+				break;
+			default:
+				return;
 		}
 	}
 
@@ -182,16 +181,16 @@ public class RecipeListController {
 		sortNameLabel.getStyleClass().remove(CSS_SORT_SELECTED);
 		sortTimeLabel.getStyleClass().remove(CSS_SORT_SELECTED);
 		switch (method) {
-		case 1:
-			sortNameArrow.getStyleClass().remove(CSS_SORT_ASC);
-			sortNameArrow.getStyleClass().remove(CSS_SORT_DESC);
-			break;
-		case 2:
-			sortTimeArrow.getStyleClass().remove(CSS_SORT_ASC);
-			sortTimeArrow.getStyleClass().remove(CSS_SORT_DESC);
-			break;
-		default:
-			return;
+			case 1:
+				sortNameArrow.getStyleClass().remove(CSS_SORT_ASC);
+				sortNameArrow.getStyleClass().remove(CSS_SORT_DESC);
+				break;
+			case 2:
+				sortTimeArrow.getStyleClass().remove(CSS_SORT_ASC);
+				sortTimeArrow.getStyleClass().remove(CSS_SORT_DESC);
+				break;
+			default:
+				return;
 		}
 	}
 

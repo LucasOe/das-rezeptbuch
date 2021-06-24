@@ -1,11 +1,25 @@
 package application;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import application.category.*;
-import application.recipe.*;
+import application.category.Category;
+import application.category.CategoryDessert;
+import application.category.CategoryDrink;
+import application.category.CategoryFish;
+import application.category.CategoryMeat;
+import application.category.CategorySoup;
+import application.category.CategoryVegan;
+import application.category.CategoryVegetarian;
+import application.recipe.Recipe;
+import application.recipe.RecipeMeat;
+import application.recipe.RecipeVegetarian;
 
 public class Database {
 
@@ -148,22 +162,22 @@ public class Database {
 
 	private Category getCategoryClass(String category) {
 		switch (category) {
-		case "Dessert":
-			return new CategoryDessert(category);
-		case "Getränk":
-			return new CategoryDrink(category);
-		case "Fischgericht":
-			return new CategoryFish(category);
-		case "Fleischgericht":
-			return new CategoryMeat(category);
-		case "Suppe":
-			return new CategorySoup(category);
-		case "Vegan":
-			return new CategoryVegan(category);
-		case "Vegetarisch":
-			return new CategoryVegetarian(category);
-		default:
-			return null;
+			case "Dessert":
+				return new CategoryDessert(category);
+			case "Getränk":
+				return new CategoryDrink(category);
+			case "Fischgericht":
+				return new CategoryFish(category);
+			case "Fleischgericht":
+				return new CategoryMeat(category);
+			case "Suppe":
+				return new CategorySoup(category);
+			case "Vegan":
+				return new CategoryVegan(category);
+			case "Vegetarisch":
+				return new CategoryVegetarian(category);
+			default:
+				return null;
 		}
 	}
 
