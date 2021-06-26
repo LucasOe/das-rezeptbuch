@@ -145,6 +145,6 @@
 		</HBox>
 	</left>
    <center>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hello World!" BorderPane.alignment="CENTER" />
+      <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello World!" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
