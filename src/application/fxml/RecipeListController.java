@@ -22,6 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class RecipeListController {
 
@@ -46,6 +47,8 @@ public class RecipeListController {
 	@FXML
 	private Pane sortTimeArrow;
 
+	private Stage primaryStage;
+
 	private int sortMethod = 1; // 1 = Name, 2 = Time
 	private boolean isNameAsc = true;
 	private boolean isTimeAsc = true;
@@ -58,6 +61,10 @@ public class RecipeListController {
 	void initialize() {
 		Main.connect();
 		updateSortButtons(sortMethod, isNameAsc);
+	}
+
+	public RecipeListController(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 
 	private void addRecipes(ArrayList<Recipe> recipeList) {
@@ -83,7 +90,10 @@ public class RecipeListController {
 
 	private void addRecipePane(HBox hbox, Recipe recipe) {
 		try {
-			Pane recipePane = FXMLLoader.load(getClass().getResource("recipeView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("recipeView.fxml"));
+			RecipeController recipeController = new RecipeController(primaryStage);
+			loader.setController(recipeController);
+			Pane recipePane = loader.load();
 
 			// set pane id
 			recipePane.setId(String.valueOf(recipe.getId()));

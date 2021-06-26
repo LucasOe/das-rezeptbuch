@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 
 import application.category.Category;
+import application.fxml.RecipeListController;
 import application.recipe.Recipe;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +18,11 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("fxml/recipeListView.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/recipeListView.fxml"));
+		RecipeListController recipeListController = new RecipeListController(primaryStage);
+		loader.setController(recipeListController);
+		Parent root = loader.load();
+
 		Scene scene = new Scene(root, 1920, 1080);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Das Rezeptbuch");

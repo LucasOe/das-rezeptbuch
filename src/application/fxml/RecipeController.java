@@ -1,16 +1,21 @@
 package application.fxml;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.Main;
 import application.recipe.Recipe;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 public class RecipeController {
 
@@ -26,9 +31,15 @@ public class RecipeController {
 	@FXML
 	private ImageView recipeImageView;
 
+	private Stage primaryStage;
+
 	@FXML
 	void initialize() {
 		clipImage();
+	}
+
+	public RecipeController(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 
 	@FXML
@@ -37,6 +48,16 @@ public class RecipeController {
 		int recipeId = Integer.parseInt(recipePane.getId());
 
 		Recipe recipe = Main.getRecipe(recipeId);
+
+		// change scene
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("recipeInfoView.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		Main.debugPrintRecipe(recipe);
 	}
 
