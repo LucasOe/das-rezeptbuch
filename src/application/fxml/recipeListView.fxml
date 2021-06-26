@@ -19,267 +19,267 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeListController">
-   <center>
-      <StackPane BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-         <children>
-            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
-               <content>
-                  <VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
-                     <padding>
-                        <Insets bottom="15.0" top="15.0" />
-                     </padding>
-                  </VBox>
-               </content>
-            </ScrollPane>
-            <BorderPane maxWidth="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefWidth="1246.0">
-               <top>
-                  <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom, #FFF0EE, transparent);" BorderPane.alignment="CENTER" />
-               </top>
-               <bottom>
-                  <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" style="-fx-background-color: linear-gradient(to top, #FFF0EE, transparent);" BorderPane.alignment="CENTER" />
-               </bottom>
-            </BorderPane>
-         </children>
-         <padding>
-            <Insets left="19.0" right="19.0" />
-         </padding>
-      </StackPane>
-   </center>
-   <top>
-      <HBox BorderPane.alignment="TOP_LEFT">
-         <children>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
-               <children>
-                  <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/menu/Element%203@8x.png" />
-                     </image>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.1599999964237213" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </ImageView>
-               </children>
-            </Pane>
-            <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
-               <children>
-                  <HBox alignment="CENTER_LEFT" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="1246.0" spacing="60.0">
-                     <children>
-                        <HBox fillHeight="false" spacing="10.0">
-                           <children>
-                              <Pane fx:id="sortNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNamePane">
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.1599999964237213" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                                 <children>
-                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortLabel" text="Name" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
-                                       <font>
-                                          <Font name="Arial Italic" size="28.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                              <Pane fx:id="sortNameArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNameArrowPane">
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.1599999964237213" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <children>
-                                    <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
-                                       <image>
-                                          <Image url="@images/menu/down-arrow.png" />
-                                       </image>
-                                       <viewport>
-                                          <Rectangle2D />
-                                       </viewport>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                           </children>
-                        </HBox>
-                        <HBox fillHeight="false" spacing="10.0">
-                           <children>
-                              <Pane fx:id="sortTimeLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimePane">
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.1599999964237213" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                                 <children>
-                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortLabel" text="Zeit" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
-                                       <font>
-                                          <Font name="Arial Italic" size="28.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Pane>
-                              <Pane fx:id="sortTimeArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimeArrowPane">
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.1599999964237213" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <children>
-                                    <ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
-                                       <image>
-                                          <Image url="@images/menu/down-arrow.png" />
-                                       </image>
-                                       <viewport>
-                                          <Rectangle2D />
-                                       </viewport>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                           </children>
-                        </HBox>
-                     </children>
-                  </HBox>
-               </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-               <padding>
-                  <Insets left="19.0" right="19.0" />
-               </padding>
-            </HBox>
-         </children>
-      </HBox>
-   </top>
-   <bottom>
-      <HBox>
-         <children>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" />
-         </children>
-      </HBox>
-   </bottom>
-   <left>
-      <HBox prefWidth="86.0" BorderPane.alignment="CENTER">
-         <children>
-            <VBox alignment="CENTER" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
-               <children>
-                  <ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" selected="true" style="-fx-background-color: #F1F1F1;" text="ToggleButton">
-                     <graphic>
-                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/menu/Element%2017@8x.png" />
-                           </image>
-                           <effect>
-                              <DropShadow>
-                                 <color>
-                                    <Color opacity="0.1599999964237213" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </graphic>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="menu" />
-                     </toggleGroup>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ToggleButton>
-                  <ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" style="-fx-background-color: #F1F1F1;" text="ToggleButton" toggleGroup="$menu">
-                     <graphic>
-                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/menu/Element%2031@8x_Gray.png" />
-                           </image>
-                           <effect>
-                              <DropShadow>
-                                 <color>
-                                    <Color opacity="0.1599999964237213" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ToggleButton>
-                  <ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" style="-fx-background-color: #F1F1F1;" text="ToggleButton" toggleGroup="$menu">
-                     <graphic>
-                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/menu/Element%2012@8x_Gray.png" />
-                           </image>
-                           <effect>
-                              <DropShadow>
-                                 <color>
-                                    <Color opacity="0.1599999964237213" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ToggleButton>
-                  <ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" style="-fx-background-color: #F1F1F1;" text="ToggleButton" toggleGroup="$menu">
-                     <graphic>
-                        <ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/menu/Element%2033@8x_Gray.png" />
-                           </image>
-                           <effect>
-                              <DropShadow>
-                                 <color>
-                                    <Color opacity="0.1599999964237213" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ToggleButton>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-   </left>
+	<center>
+		<StackPane BorderPane.alignment="CENTER">
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+			<children>
+				<ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
+					<content>
+						<VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
+							<padding>
+								<Insets bottom="15.0" top="15.0" />
+							</padding>
+						</VBox>
+					</content>
+				</ScrollPane>
+				<BorderPane maxWidth="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefWidth="1246.0">
+					<top>
+						<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" style="-fx-background-color: linear-gradient(to bottom, #FFF0EE, transparent);" BorderPane.alignment="CENTER" />
+					</top>
+					<bottom>
+						<Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" style="-fx-background-color: linear-gradient(to top, #FFF0EE, transparent);" BorderPane.alignment="CENTER" />
+					</bottom>
+				</BorderPane>
+			</children>
+			<padding>
+				<Insets left="19.0" right="19.0" />
+			</padding>
+		</StackPane>
+	</center>
+	<top>
+		<HBox BorderPane.alignment="TOP_LEFT">
+			<children>
+				<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+					<children>
+						<ImageView fitHeight="62.0" fitWidth="62.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@images/menu/Element%203@8x.png" />
+							</image>
+							<effect>
+								<DropShadow>
+									<color>
+										<Color opacity="0.1599999964237213" />
+									</color>
+								</DropShadow>
+							</effect>
+						</ImageView>
+					</children>
+				</Pane>
+				<HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+					<children>
+						<HBox alignment="CENTER_LEFT" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="1246.0" spacing="60.0">
+							<children>
+								<HBox fillHeight="false" spacing="10.0">
+									<children>
+										<Pane fx:id="sortNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNamePane">
+											<effect>
+												<DropShadow>
+													<color>
+														<Color opacity="0.1599999964237213" />
+													</color>
+												</DropShadow>
+											</effect>
+											<children>
+												<Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortLabel" text="Name" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
+													<font>
+														<Font name="Arial Italic" size="28.0" />
+													</font>
+												</Label>
+											</children>
+											<cursor>
+												<Cursor fx:constant="HAND" />
+											</cursor>
+										</Pane>
+										<Pane fx:id="sortNameArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortNameArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortNameArrowPane">
+											<effect>
+												<DropShadow>
+													<color>
+														<Color opacity="0.1599999964237213" />
+													</color>
+												</DropShadow>
+											</effect>
+											<cursor>
+												<Cursor fx:constant="HAND" />
+											</cursor>
+											<children>
+												<ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
+													<image>
+														<Image url="@images/menu/down-arrow.png" />
+													</image>
+													<viewport>
+														<Rectangle2D />
+													</viewport>
+												</ImageView>
+											</children>
+										</Pane>
+									</children>
+								</HBox>
+								<HBox fillHeight="false" spacing="10.0">
+									<children>
+										<Pane fx:id="sortTimeLabel" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeLabel" prefHeight="48.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimePane">
+											<effect>
+												<DropShadow>
+													<color>
+														<Color opacity="0.1599999964237213" />
+													</color>
+												</DropShadow>
+											</effect>
+											<children>
+												<Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="128.0" styleClass="sortLabel" text="Zeit" textAlignment="CENTER" textFill="#707070" textOverrun="CLIP">
+													<font>
+														<Font name="Arial Italic" size="28.0" />
+													</font>
+												</Label>
+											</children>
+											<cursor>
+												<Cursor fx:constant="HAND" />
+											</cursor>
+										</Pane>
+										<Pane fx:id="sortTimeArrow" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSortTimeArrow" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimeArrowPane">
+											<effect>
+												<DropShadow>
+													<color>
+														<Color opacity="0.1599999964237213" />
+													</color>
+												</DropShadow>
+											</effect>
+											<cursor>
+												<Cursor fx:constant="HAND" />
+											</cursor>
+											<children>
+												<ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
+													<image>
+														<Image url="@images/menu/down-arrow.png" />
+													</image>
+													<viewport>
+														<Rectangle2D />
+													</viewport>
+												</ImageView>
+											</children>
+										</Pane>
+									</children>
+								</HBox>
+							</children>
+						</HBox>
+					</children>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+					<padding>
+						<Insets left="19.0" right="19.0" />
+					</padding>
+				</HBox>
+			</children>
+		</HBox>
+	</top>
+	<bottom>
+		<HBox>
+			<children>
+				<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" />
+			</children>
+		</HBox>
+	</bottom>
+	<left>
+		<HBox prefWidth="86.0" BorderPane.alignment="CENTER">
+			<children>
+				<VBox alignment="CENTER" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+					<children>
+						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" selected="true" style="-fx-background-color: #F1F1F1;" text="ToggleButton">
+							<graphic>
+								<ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@images/menu/Element%2017@8x.png" />
+									</image>
+									<effect>
+										<DropShadow>
+											<color>
+												<Color opacity="0.1599999964237213" />
+											</color>
+										</DropShadow>
+									</effect>
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</ImageView>
+							</graphic>
+							<toggleGroup>
+								<ToggleGroup fx:id="menu" />
+							</toggleGroup>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</ToggleButton>
+						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" style="-fx-background-color: #F1F1F1;" text="ToggleButton" toggleGroup="$menu">
+							<graphic>
+								<ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@images/menu/Element%2031@8x_Gray.png" />
+									</image>
+									<effect>
+										<DropShadow>
+											<color>
+												<Color opacity="0.1599999964237213" />
+											</color>
+										</DropShadow>
+									</effect>
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</ImageView>
+							</graphic>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</ToggleButton>
+						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" style="-fx-background-color: #F1F1F1;" text="ToggleButton" toggleGroup="$menu">
+							<graphic>
+								<ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@images/menu/Element%2012@8x_Gray.png" />
+									</image>
+									<effect>
+										<DropShadow>
+											<color>
+												<Color opacity="0.1599999964237213" />
+											</color>
+										</DropShadow>
+									</effect>
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</ImageView>
+							</graphic>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</ToggleButton>
+						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" style="-fx-background-color: #F1F1F1;" text="ToggleButton" toggleGroup="$menu">
+							<graphic>
+								<ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@images/menu/Element%2033@8x_Gray.png" />
+									</image>
+									<effect>
+										<DropShadow>
+											<color>
+												<Color opacity="0.1599999964237213" />
+											</color>
+										</DropShadow>
+									</effect>
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</ImageView>
+							</graphic>
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</ToggleButton>
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+	</left>
 </BorderPane>
