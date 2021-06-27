@@ -20,17 +20,17 @@ import javafx.stage.Stage;
 
 public class RecipeInfoController {
 
-    @FXML
-    private ResourceBundle resources;
+	@FXML
+	private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+	@FXML
+	private URL location;
 
-    @FXML
-    private ToggleGroup menu;
+	@FXML
+	private ToggleGroup menu;
 
-    @FXML
-    private Label recipeLabelName;
+	@FXML
+	private Label recipeLabelName;
 
 	@FXML
 	private Label recipeLabelDescription;
@@ -44,15 +44,34 @@ public class RecipeInfoController {
 	private Stage primaryStage;
 	private Recipe recipe;
 
-    @FXML
-    void initialize() {
-        recipeLabelName.setText(recipe.getName());
+	@FXML
+	void initialize() {
+		setProperties();
+	}
+
+	public RecipeInfoController(Stage primaryStage, Recipe recipe) {
+		this.primaryStage = primaryStage;
+		this.recipe = recipe;
+	}
+
+	@FXML
+	void clickReturnButton(MouseEvent event) {
+		changeScene();
+	}
+
+	@FXML
+	void clickSidebarList(MouseEvent event) {
+		changeScene();
+	}
+
+	private void setProperties() {
+		recipeLabelName.setText(recipe.getName());
 
 		String desc = recipe.getDesc().replace("\\n", "\n\n"); // replace line breaks
 		recipeLabelDescription.setText(desc);
 
 		// add ingredients
-		for(Ingredient ingredient : recipe.getIngredientList()) {
+		for (Ingredient ingredient : recipe.getIngredientList()) {
 			try {
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("views/ingredientPaneView.fxml"));
 				IngredientPanelController ingredientPanelController = new IngredientPanelController(ingredient);
@@ -64,21 +83,6 @@ public class RecipeInfoController {
 				e.printStackTrace();
 			}
 		}
-    }
-
-	public RecipeInfoController(Stage primaryStage, Recipe recipe) {
-		this.primaryStage = primaryStage;
-		this.recipe = recipe;
-	}
-	
-	@FXML
-    void clickReturnButton(MouseEvent event) {
-		changeScene();
-    }
-
-	@FXML 
-	void clickSidebarList(MouseEvent event) {
-		changeScene();
 	}
 
 	private void changeScene() {

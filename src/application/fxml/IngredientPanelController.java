@@ -24,11 +24,15 @@ public class IngredientPanelController {
 
     @FXML
     void initialize() {
-        ingredientLabelAmount.setText(ingredient.getAmount());
-		ingredientLabelName.setText(ingredient.getIngredientName());
+        setProperties();
     }
 
 	public IngredientPanelController(Ingredient ingredient) {
 		this.ingredient = ingredient;
+	}
+
+	private void setProperties() {
+		ingredientLabelAmount.setText(ingredient.getAmount());
+		ingredientLabelName.setText(ingredient.getIngredientName());
 	}
 }

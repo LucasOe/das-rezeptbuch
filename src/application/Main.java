@@ -35,6 +35,7 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		// TODO: Add database setup if schema doesn't exist
+		connect();
 		launch(args); // create GUI
 	}
 

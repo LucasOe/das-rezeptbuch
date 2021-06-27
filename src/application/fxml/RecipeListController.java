@@ -50,7 +50,6 @@ public class RecipeListController {
 
 	@FXML
 	void initialize() {
-		Main.connect();
 		updateSortButtons(sortMethod, isNameAsc);
 	}
 

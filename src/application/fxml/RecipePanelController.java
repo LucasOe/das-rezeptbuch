@@ -52,7 +52,20 @@ public class RecipePanelController {
 	@FXML
 	void initialize() {
 		clipImage();
+		setProperties();
+	}
 
+	public RecipePanelController(Stage primaryStage, Recipe recipe) {
+		this.primaryStage = primaryStage;
+		this.recipe = recipe;
+	}
+
+	@FXML
+	void clickRecipe(MouseEvent event) {
+		changeScene();
+	}
+
+	private void setProperties() {
 		recipeLabelName.setText(recipe.getName());
 		recipeLabelTime.setText(String.valueOf(recipe.getTime()) + "min");
 
@@ -78,17 +91,7 @@ public class RecipePanelController {
 			tooltipLabel.setGraphic(imageView);
 			tooltipLabel.setTooltip(new Tooltip(category.getCategoryName()));
 			recipeCategoryList.getChildren().add(tooltipLabel);
-		}
-	}
-
-	public RecipePanelController(Stage primaryStage, Recipe recipe) {
-		this.primaryStage = primaryStage;
-		this.recipe = recipe;
-	}
-
-	@FXML
-	void clickRecipe(MouseEvent event) {
-		changeScene();
+		}	
 	}
 
 	private void changeScene() {
@@ -99,6 +102,7 @@ public class RecipePanelController {
 			loader.setController(recipeInfoController);
 			Pane pane = loader.load();
 			Scene scene = new Scene(pane);
+			System.out.println(primaryStage.getRenderScaleX());
 			primaryStage.setScene(scene);
 		} catch (IOException e) {
 			e.printStackTrace();
