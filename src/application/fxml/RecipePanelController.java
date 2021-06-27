@@ -95,7 +95,7 @@ public class RecipePanelController {
 	}
 
 	private void changeScene() {
-		// change scene to recipeListView
+		// change scene to recipeInfoView
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("views/recipeInfoView.fxml"));
 			RecipeInfoController recipeInfoController = new RecipeInfoController(primaryStage, recipe);
