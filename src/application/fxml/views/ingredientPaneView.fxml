@@ -4,11 +4,11 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
-
+<?import javafx.scene.text.Font?>
 
 <HBox alignment="CENTER_LEFT" spacing="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
-		<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="500g" textAlignment="CENTER">
+		<Label fx:id="ingredientLabelAmount" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="500g" textAlignment="CENTER" textFill="#707070">
 			<effect>
 				<DropShadow>
 					<color>
@@ -16,8 +16,11 @@
 					</color>
 				</DropShadow>
 			</effect>
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
 		</Label>
-		<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="Inhalt" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+		<Label fx:id="ingredientLabelName" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="Inhalt" textAlignment="CENTER" textFill="#707070" HBox.hgrow="ALWAYS">
 			<effect>
 				<DropShadow>
 					<color>
@@ -25,6 +28,9 @@
 					</color>
 				</DropShadow>
 			</effect>
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
 		</Label>
 	</children>
 </HBox>

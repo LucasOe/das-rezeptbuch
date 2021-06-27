@@ -50,8 +50,8 @@ public class RecipeInfoController {
 		for(Ingredient ingredient : recipe.getIngredientList()) {
 			try {
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("views/ingredientPaneView.fxml"));
-				//RecipePanelController recipeController = new RecipePanelController(ingredient);
-				//loader.setController(recipeController);
+				IngredientPanelController ingredientPanelController = new IngredientPanelController(ingredient);
+				loader.setController(ingredientPanelController);
 				HBox ingredientPane = loader.load();
 
 				System.out.println(ingredientPane.getWidth());
