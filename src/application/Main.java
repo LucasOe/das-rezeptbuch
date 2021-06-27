@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import application.category.Category;
 import application.fxml.RecipeListController;
 import application.recipe.Recipe;
+import application.sort.Mergesort;
+import application.sort.Quicksort;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
