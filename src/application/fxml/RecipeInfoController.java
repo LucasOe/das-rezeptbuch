@@ -92,7 +92,11 @@ public class RecipeInfoController {
 			RecipeListController recipeListController = new RecipeListController(primaryStage);
 			loader.setController(recipeListController);
 			Pane pane = loader.load();
-			Scene scene = new Scene(pane);
+
+			double width = primaryStage.getScene().getWidth();
+			double height = primaryStage.getScene().getHeight();
+			Scene scene = new Scene(pane, width, height);
+
 			primaryStage.setScene(scene);
 		} catch (IOException e) {
 			e.printStackTrace();
