@@ -102,7 +102,6 @@ public class RecipePanelController {
 			loader.setController(recipeInfoController);
 			Pane pane = loader.load();
 			Scene scene = new Scene(pane);
-			System.out.println(primaryStage.getRenderScaleX());
 			primaryStage.setScene(scene);
 		} catch (IOException e) {
 			e.printStackTrace();
