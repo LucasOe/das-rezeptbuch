@@ -32,6 +32,7 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
+		// TODO: Add database setup if schema doesn't exist
 		launch(args); // create GUI
 	}
 
@@ -59,6 +60,7 @@ public class Main extends Application {
 	 * 3 = ascending Time,
 	 * 4 = descending Time
 	 */
+	// TODO: Rework with isAsc
 	public static ArrayList<Recipe> getRecipeList(int sortMode) {
 		ArrayList<Recipe> recipeList = db.getRecipeList();
 		if (sortMode == 0)
