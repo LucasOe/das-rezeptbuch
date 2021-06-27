@@ -23,7 +23,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class RecipeController {
+public class RecipePanelController {
 
 	@FXML
 	private ResourceBundle resources;
@@ -81,7 +81,7 @@ public class RecipeController {
 		}
 	}
 
-	public RecipeController(Stage primaryStage, Recipe recipe) {
+	public RecipePanelController(Stage primaryStage, Recipe recipe) {
 		this.primaryStage = primaryStage;
 		this.recipe = recipe;
 	}

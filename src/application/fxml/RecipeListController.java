@@ -81,8 +81,8 @@ public class RecipeListController {
 
 	private void addRecipePane(HBox hbox, Recipe recipe) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("recipeView.fxml"));
-			RecipeController recipeController = new RecipeController(primaryStage, recipe);
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("recipePanelView.fxml"));
+			RecipePanelController recipeController = new RecipePanelController(primaryStage, recipe);
 			loader.setController(recipeController);
 			Pane recipePane = loader.load();
 
