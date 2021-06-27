@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheets/stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
 	<top>
 		<HBox BorderPane.alignment="TOP_LEFT">
 			<children>
@@ -39,94 +39,94 @@
 						</ImageView>
 					</children>
 				</Pane>
-            <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
-               <children>
-                  <HBox alignment="CENTER_LEFT" fillHeight="false" spacing="20.0">
-                     <children>
-                        <HBox fillHeight="false">
-                           <children>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="128.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
-                                 <children>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="128.0" text="Zurück" textFill="#707070">
-                                       <font>
-                                          <Font name="Arial Italic" size="28.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.1599999964237213" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </HBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </HBox>
-                        <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
-                           <children>
-                              <GridPane HBox.hgrow="ALWAYS">
-                                <columnConstraints>
-                                  <ColumnConstraints minWidth="48.0" prefWidth="48.0" />
-                                    <ColumnConstraints hgrow="ALWAYS" />
-                                  <ColumnConstraints minWidth="48.0" prefWidth="48.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <Label fx:id="recipeLabelName" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="48.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="Name" textFill="#707070" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
-                                       <font>
-                                          <Font name="Cambria" size="38.0" />
-                                       </font>
-                                       <GridPane.margin>
-                                          <Insets />
-                                       </GridPane.margin>
-                                       <padding>
-                                          <Insets left="20.0" right="20.0" />
-                                       </padding>
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </Label>
-                                    <ImageView fx:id="recipeImageFavorite" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                       <image>
-                                          <Image url="@images/menu/Element%2030@8x.png" />
-                                       </image>
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </ImageView>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets left="20.0" right="20.0" />
-                                 </HBox.margin>
-                              </GridPane>
-                           </children>
-                        </HBox>
-                        <Pane prefWidth="128.0">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Pane>
-                     </children>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets left="19.0" right="19.0" />
-               </padding>
-            </HBox>
+				<HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+					<children>
+						<HBox alignment="CENTER_LEFT" fillHeight="false" spacing="20.0">
+							<children>
+								<HBox fillHeight="false">
+									<children>
+										<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="128.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
+											<children>
+												<Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="128.0" text="Zurück" textFill="#707070">
+													<font>
+														<Font name="Arial Italic" size="28.0" />
+													</font>
+												</Label>
+											</children>
+											<effect>
+												<DropShadow>
+													<color>
+														<Color opacity="0.1599999964237213" />
+													</color>
+												</DropShadow>
+											</effect>
+										</HBox>
+									</children>
+									<HBox.margin>
+										<Insets />
+									</HBox.margin>
+								</HBox>
+								<HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
+									<children>
+										<GridPane HBox.hgrow="ALWAYS">
+											<columnConstraints>
+												<ColumnConstraints minWidth="48.0" prefWidth="48.0" />
+												<ColumnConstraints hgrow="ALWAYS" />
+												<ColumnConstraints minWidth="48.0" prefWidth="48.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Label fx:id="recipeLabelName" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="48.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="Name" textFill="#707070" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+													<font>
+														<Font name="Cambria" size="38.0" />
+													</font>
+													<GridPane.margin>
+														<Insets />
+													</GridPane.margin>
+													<padding>
+														<Insets left="20.0" right="20.0" />
+													</padding>
+													<effect>
+														<DropShadow>
+															<color>
+																<Color opacity="0.1599999964237213" />
+															</color>
+														</DropShadow>
+													</effect>
+												</Label>
+												<ImageView fx:id="recipeImageFavorite" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+													<image>
+														<Image url="@images/menu/Element%2030@8x.png" />
+													</image>
+													<effect>
+														<DropShadow>
+															<color>
+																<Color opacity="0.1599999964237213" />
+															</color>
+														</DropShadow>
+													</effect>
+												</ImageView>
+											</children>
+											<HBox.margin>
+												<Insets left="20.0" right="20.0" />
+											</HBox.margin>
+										</GridPane>
+									</children>
+								</HBox>
+								<Pane prefWidth="128.0">
+									<HBox.margin>
+										<Insets />
+									</HBox.margin>
+								</Pane>
+							</children>
+						</HBox>
+					</children>
+					<padding>
+						<Insets left="19.0" right="19.0" />
+					</padding>
+				</HBox>
 			</children>
 		</HBox>
 	</top>
@@ -134,28 +134,28 @@
 		<HBox>
 			<children>
 				<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" />
-            <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
-               <children>
-                  <HBox alignment="CENTER_LEFT" spacing="20.0">
-                     <children>
-                        <Pane minWidth="-Infinity" prefWidth="128.0">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Pane>
-                        <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
-                           <children>
-                              <Pane />
-                           </children>
-                        </HBox>
-                        <Pane prefWidth="128.0" />
-                     </children>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets left="19.0" right="19.0" />
-               </padding>
-            </HBox>
+				<HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+					<children>
+						<HBox alignment="CENTER_LEFT" spacing="20.0">
+							<children>
+								<Pane minWidth="-Infinity" prefWidth="128.0">
+									<HBox.margin>
+										<Insets />
+									</HBox.margin>
+								</Pane>
+								<HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
+									<children>
+										<Pane />
+									</children>
+								</HBox>
+								<Pane prefWidth="128.0" />
+							</children>
+						</HBox>
+					</children>
+					<padding>
+						<Insets left="19.0" right="19.0" />
+					</padding>
+				</HBox>
 			</children>
 		</HBox>
 	</bottom>
@@ -207,9 +207,9 @@
 							<cursor>
 								<Cursor fx:constant="HAND" />
 							</cursor>
-                     <toggleGroup>
+							<toggleGroup>
 								<ToggleGroup fx:id="menu" />
-                     </toggleGroup>
+							</toggleGroup>
 						</ToggleButton>
 						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" style="-fx-background-color: #F1F1F1;" text="ToggleButton" toggleGroup="$menu">
 							<graphic>
@@ -260,90 +260,90 @@
 			</children>
 		</HBox>
 	</left>
-   <center>
-      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER_LEFT" spacing="20.0">
-               <children>
-                  <Pane minWidth="-Infinity" prefWidth="128.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Pane>
-                  <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
-                     <children>
-                        <HBox alignment="CENTER" prefWidth="1246.0" spacing="20.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefWidth="593.0" spacing="20.0">
-                                 <children>
-                                    <HBox alignment="CENTER" prefHeight="48.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
-                                       <children>
-                                          <Text fill="#707070" strokeType="OUTSIDE" strokeWidth="0.0" text="Zutaten" textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Cambria" size="28.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefWidth="593.0" spacing="20.0">
-                                 <children>
-                                    <HBox alignment="CENTER" prefHeight="48.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
-                                       <children>
-                                          <Text fill="#707070" strokeType="OUTSIDE" strokeWidth="0.0" text="Zubereitung" textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Cambria" size="28.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </HBox>
-                                    <VBox prefWidth="100.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" VBox.vgrow="ALWAYS">
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.1599999964237213" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                       <children>
-                                          <Label fx:id="recipeLabelDescription" alignment="TOP_LEFT" text="Beschreibung" textFill="#707070" wrapText="true">
-                                             <font>
-                                                <Font name="Cambria" size="18.0" />
-                                             </font>
-                                             <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                             </padding>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </HBox>
-                  <Pane prefWidth="128.0" />
-               </children>
-            </HBox>
-         </children>
-         <padding>
-            <Insets left="19.0" right="19.0" />
-         </padding>
-      </HBox>
-   </center>
+	<center>
+		<HBox alignment="CENTER" BorderPane.alignment="CENTER">
+			<children>
+				<HBox alignment="CENTER_LEFT" spacing="20.0">
+					<children>
+						<Pane minWidth="-Infinity" prefWidth="128.0">
+							<HBox.margin>
+								<Insets />
+							</HBox.margin>
+						</Pane>
+						<HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
+							<children>
+								<HBox alignment="CENTER" prefWidth="1246.0" spacing="20.0">
+									<children>
+										<VBox alignment="TOP_CENTER" prefWidth="593.0" spacing="20.0">
+											<children>
+												<HBox alignment="CENTER" prefHeight="48.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
+													<children>
+														<Text fill="#707070" strokeType="OUTSIDE" strokeWidth="0.0" text="Zutaten" textAlignment="CENTER">
+															<font>
+																<Font name="Cambria" size="28.0" />
+															</font>
+														</Text>
+													</children>
+													<effect>
+														<DropShadow>
+															<color>
+																<Color opacity="0.1599999964237213" />
+															</color>
+														</DropShadow>
+													</effect>
+												</HBox>
+											</children>
+										</VBox>
+										<VBox alignment="TOP_CENTER" prefWidth="593.0" spacing="20.0">
+											<children>
+												<HBox alignment="CENTER" prefHeight="48.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
+													<children>
+														<Text fill="#707070" strokeType="OUTSIDE" strokeWidth="0.0" text="Zubereitung" textAlignment="CENTER">
+															<font>
+																<Font name="Cambria" size="28.0" />
+															</font>
+														</Text>
+													</children>
+													<effect>
+														<DropShadow>
+															<color>
+																<Color opacity="0.1599999964237213" />
+															</color>
+														</DropShadow>
+													</effect>
+												</HBox>
+												<VBox prefWidth="100.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" VBox.vgrow="ALWAYS">
+													<effect>
+														<DropShadow>
+															<color>
+																<Color opacity="0.1599999964237213" />
+															</color>
+														</DropShadow>
+													</effect>
+													<children>
+														<Label fx:id="recipeLabelDescription" alignment="TOP_LEFT" text="Beschreibung" textFill="#707070" wrapText="true">
+															<font>
+																<Font name="Cambria" size="18.0" />
+															</font>
+															<padding>
+																<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+															</padding>
+														</Label>
+													</children>
+												</VBox>
+											</children>
+										</VBox>
+									</children>
+								</HBox>
+							</children>
+						</HBox>
+						<Pane prefWidth="128.0" />
+					</children>
+				</HBox>
+			</children>
+			<padding>
+				<Insets left="19.0" right="19.0" />
+			</padding>
+		</HBox>
+	</center>
 </BorderPane>

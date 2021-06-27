@@ -14,6 +14,6 @@ public class RecipeMeat extends Recipe {
 
 	@Override
 	public String getStylesheet() {
-		return "application/fxml/stylesheetMeat.css";
+		return "application/fxml/stylesheets/stylesheetMeat.css";
 	}
 }
