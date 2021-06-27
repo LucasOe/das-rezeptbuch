@@ -25,7 +25,7 @@
 				<Insets />
 			</BorderPane.margin>
 			<children>
-				<ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
+				<ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
 					<content>
 						<VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
 							<padding>
