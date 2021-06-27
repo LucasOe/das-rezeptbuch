@@ -1,14 +1,16 @@
 .sortNamePane,
 .sortTimePane,
 .sortNameArrowPane,
-.sortTimeArrowPane {
+.sortTimeArrowPane,
+.returnButton {
 	-fx-background-color: #f3f3f3 !important;
 }
 
 .sortNamePane:hover,
 .sortTimePane:hover,
 .sortNameArrowPane:hover,
-.sortTimeArrowPane:hover {
+.sortTimeArrowPane:hover,
+.returnButton:hover {
 	-fx-background-color: #ececec !important;
 }
 
