@@ -6,8 +6,9 @@ import java.util.ResourceBundle;
 import application.Main;
 import application.recipe.Recipe;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.text.Text;
+import javafx.scene.image.ImageView;
 
 public class RecipeInfoController {
 
@@ -21,13 +22,22 @@ public class RecipeInfoController {
     private ToggleGroup menu;
 
     @FXML
-    private Text text;
+    private Label recipeLabelName;
+
+	@FXML
+	private Label recipeLabelDescription;
+
+	@FXML
+	private ImageView recipeImageFavorite;
 
 	private Recipe recipe;
 
     @FXML
     void initialize() {
-        text.setText(recipe.getName());
+        recipeLabelName.setText(recipe.getName());
+		// replace line breaks
+		String desc = recipe.getDesc().replace("\\n", "\n\n");
+		recipeLabelDescription.setText(desc);
 
 		Main.debugPrintRecipe(recipe);
     }

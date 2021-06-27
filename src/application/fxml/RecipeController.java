@@ -88,7 +88,7 @@ public class RecipeController {
 
 	@FXML
 	void clickRecipe(MouseEvent event) {
-		// change scene
+		// change scene to recipeInfoView
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("recipeInfoView.fxml"));
 			RecipeInfoController recipeInfoController = new RecipeInfoController(recipe);
