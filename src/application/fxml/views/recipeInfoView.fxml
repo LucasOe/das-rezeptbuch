@@ -23,7 +23,7 @@
 	<top>
 		<HBox BorderPane.alignment="TOP_LEFT">
 			<children>
-				<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+				<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1; -fx-border-style: hidden solid hidden hidden; -fx-border-color: #dbdbdb; -fx-border-width: 2;">
 					<children>
 						<ImageView fitHeight="62.0" fitWidth="62.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
 							<image>
@@ -65,7 +65,7 @@
 										<Insets />
 									</HBox.margin>
 								</HBox>
-								<HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
+								<HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="1246.0" style="-fx-background-color: #F3F3F3; -fx-border-style: hidden solid hidden solid; -fx-border-color: #dbdbdb; -fx-border-width: 2;">
 									<children>
 										<GridPane HBox.hgrow="ALWAYS">
 											<columnConstraints>
@@ -132,7 +132,7 @@
 	<bottom>
 		<HBox>
 			<children>
-				<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" />
+				<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1; -fx-border-style: hidden solid hidden hidden; -fx-border-color: #dbdbdb; -fx-border-width: 2;" />
 				<HBox alignment="CENTER" HBox.hgrow="ALWAYS">
 					<children>
 						<HBox alignment="CENTER_LEFT" spacing="20.0">
@@ -142,7 +142,7 @@
 										<Insets />
 									</HBox.margin>
 								</Pane>
-								<HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
+								<HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3; -fx-border-style: hidden solid hidden solid; -fx-border-color: #dbdbdb; -fx-border-width: 2;">
 									<children>
 										<Pane />
 									</children>
@@ -161,9 +161,9 @@
 	<left>
 		<HBox prefWidth="86.0" BorderPane.alignment="CENTER">
 			<children>
-				<VBox alignment="CENTER" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+				<VBox alignment="CENTER" prefWidth="86.0" style="-fx-background-color: #F1F1F1; -fx-border-style: hidden solid hidden hidden; -fx-border-color: #dbdbdb; -fx-border-width: 2;">
 					<children>
-						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" selected="true" style="-fx-background-color: #F1F1F1;" text="ToggleButton">
+						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" onMouseClicked="#clickSidebarList" prefHeight="86.0" selected="true" style="-fx-background-color: #F1F1F1;" text="ToggleButton">
 							<graphic>
 								<ImageView fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
 									<image>
@@ -269,7 +269,7 @@
 								<Insets />
 							</HBox.margin>
 						</Pane>
-						<HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3;">
+						<HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1246.0" style="-fx-background-color: #F3F3F3; -fx-border-style: hidden solid hidden solid; -fx-border-color: #dbdbdb; -fx-border-width: 2;">
 							<children>
 								<HBox alignment="CENTER" prefWidth="1246.0" spacing="20.0">
 									<children>

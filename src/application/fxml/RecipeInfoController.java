@@ -76,6 +76,11 @@ public class RecipeInfoController {
 		changeScene();
     }
 
+	@FXML 
+	void clickSidebarList(MouseEvent event) {
+		changeScene();
+	}
+
 	private void changeScene() {
 		// change scene to recipeListView
 		try {
