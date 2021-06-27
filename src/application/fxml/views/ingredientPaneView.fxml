@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+
+
+<HBox alignment="CENTER_LEFT" spacing="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="500g" textAlignment="CENTER">
+			<effect>
+				<DropShadow>
+					<color>
+						<Color opacity="0.1599999964237213" />
+					</color>
+				</DropShadow>
+			</effect>
+		</Label>
+		<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="Inhalt" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+			<effect>
+				<DropShadow>
+					<color>
+						<Color opacity="0.1599999964237213" />
+					</color>
+				</DropShadow>
+			</effect>
+		</Label>
+	</children>
+</HBox>
