@@ -18,7 +18,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/recipeListView.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/views/recipeListView.fxml"));
 		RecipeListController recipeListController = new RecipeListController(primaryStage);
 		loader.setController(recipeListController);
 		Parent root = loader.load();
@@ -26,7 +26,7 @@ public class Main extends Application {
 		Scene scene = new Scene(root, 1920, 1080);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Das Rezeptbuch");
-		primaryStage.getIcons().add(new Image("application/fxml/images/menu/Element 3@8x.png"));
+		primaryStage.getIcons().add(new Image("application/fxml/views/images/menu/Element 3@8x.png"));
 		primaryStage.setResizable(true);
 		primaryStage.show();
 	}

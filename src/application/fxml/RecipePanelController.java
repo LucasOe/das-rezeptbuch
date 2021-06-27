@@ -56,7 +56,7 @@ public class RecipePanelController {
 		recipeLabelName.setText(recipe.getName());
 		recipeLabelTime.setText(String.valueOf(recipe.getTime()) + "min");
 
-		Image recipeImage = new Image("application/fxml/images/recipes/" + recipe.getImageUrl());
+		Image recipeImage = new Image("application/fxml/views/images/recipes/" + recipe.getImageUrl());
 		recipeImageView.setImage(recipeImage);
 
 		// set background color
@@ -90,7 +90,7 @@ public class RecipePanelController {
 	void clickRecipe(MouseEvent event) {
 		// change scene to recipeInfoView
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("recipeInfoView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("views/recipeInfoView.fxml"));
 			RecipeInfoController recipeInfoController = new RecipeInfoController(recipe);
 			loader.setController(recipeInfoController);
 			Pane pane = loader.load();

@@ -8,7 +8,7 @@ public class CategoryVegan extends Category {
 
 	@Override
 	public String getCategoryImageUrl() {
-		return "application/fxml/images/categories/Element 45@8x.png";
+		return "application/fxml/views/images/categories/Element 45@8x.png";
 	}
 
 }

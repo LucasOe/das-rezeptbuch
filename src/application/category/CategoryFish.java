@@ -8,7 +8,7 @@ public class CategoryFish extends Category {
 
 	@Override
 	public String getCategoryImageUrl() {
-		return "application/fxml/images/categories/Element 08@8x.png";
+		return "application/fxml/views/images/categories/Element 08@8x.png";
 	}
 
 }
