@@ -45,7 +45,7 @@
 							<children>
 								<HBox fillHeight="false">
 									<children>
-										<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="128.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
+										<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#clickReturnButton" prefHeight="46.0" prefWidth="128.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;">
 											<children>
 												<Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="128.0" text="Zurück" textFill="#707070">
 													<font>
