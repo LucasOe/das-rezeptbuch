@@ -37,7 +37,7 @@ public class Database {
 
 	public Database(String dbName, String user, String password, boolean init) {
 		if (init)
-			initializeDatabase(user, password);
+			initializeDatabase(dbName, user, password);
 
 		try {
 			connection = DriverManager.getConnection(DB_URL + dbName, user, password);
@@ -50,11 +50,11 @@ public class Database {
 		}
 	}
 
-	private void initializeDatabase(String user, String password) {
+	private void initializeDatabase(String dbName, String user, String password) {
 		try (Connection initConnection = DriverManager.getConnection(DB_URL, user, password);
 				Statement initStmt = initConnection.createStatement();) {
-			initStmt.execute("CREATE SCHEMA IF NOT EXISTS rezepte_test");
-			initStmt.execute("USE rezepte_test");
+			initStmt.execute("CREATE SCHEMA IF NOT EXISTS " + dbName);
+			initStmt.execute("USE " + dbName);
 			ArrayList<String> lines = readFile("db/init.sql");
 			for (String line : lines) {
 				if (line.length() > 0) {
