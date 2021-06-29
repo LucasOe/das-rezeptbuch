@@ -35,8 +35,8 @@ public class Database {
 
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/";
 
-	public Database(String dbName, String user, String password, boolean forceOverwite) {
-		if (forceOverwite)
+	public Database(String dbName, String user, String password, boolean init) {
+		if (init)
 			initializeDatabase(user, password);
 
 		try {
@@ -53,7 +53,6 @@ public class Database {
 	private void initializeDatabase(String user, String password) {
 		try (Connection initConnection = DriverManager.getConnection(DB_URL, user, password);
 				Statement initStmt = initConnection.createStatement();) {
-			initStmt.execute("DROP SCHEMA IF EXISTS rezepte_test");
 			initStmt.execute("CREATE SCHEMA IF NOT EXISTS rezepte_test");
 			initStmt.execute("USE rezepte_test");
 			ArrayList<String> lines = readFile("db/init.sql");

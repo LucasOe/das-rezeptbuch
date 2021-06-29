@@ -38,8 +38,8 @@ public class Main extends Application {
 		launch(args); // create GUI
 	}
 
-	public static void connect(String dbName, boolean forceOverwite) {
-		db = new Database(dbName, "root", "", forceOverwite);
+	public static void connect(String dbName, boolean init) {
+		db = new Database(dbName, "root", "", init);
 	}
 
 	public static void addRecipe(Recipe recipe) {
