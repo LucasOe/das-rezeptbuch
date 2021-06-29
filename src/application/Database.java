@@ -1,5 +1,11 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -27,15 +33,45 @@ public class Database {
 	Statement stmt;
 	Statement stmtInner;
 
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/";
+
 	public Database(String dbName, String user, String password) {
+		initializeDatabase(user, password);
+
 		try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName, user, password);
+			connection = DriverManager.getConnection(DB_URL + dbName, user, password);
 			stmt = connection.createStatement();
 			stmtInner = connection.createStatement();
 
 			System.out.println("Connected");
 		} catch (SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+		}
+	}
+
+	private void initializeDatabase(String user, String password) {
+		try (Connection initConnection = DriverManager.getConnection(DB_URL, user, password);
+				Statement initStmt = initConnection.createStatement();) {
+			initStmt.executeLargeUpdate(readFile("db/init.sql"));
+		} catch (SQLException exception) {
+			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+		}
+	}
+
+	private String readFile(String pathString) {
+
+		Path path = Paths.get(pathString);
+		try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+			StringBuilder content = new StringBuilder();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				content.append(line + "\n");
+			}
+
+			return content.toString();
+		} catch (IOException exception) {
+			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+			return null;
 		}
 	}
 
