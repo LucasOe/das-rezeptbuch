@@ -34,12 +34,12 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
-		connect("rezepte_test");
+		connect("rezepte_test", true);
 		launch(args); // create GUI
 	}
 
-	public static void connect(String dbName) {
-		db = new Database(dbName, "root", "");
+	public static void connect(String dbName, boolean forceOverwite) {
+		db = new Database(dbName, "root", "", forceOverwite);
 	}
 
 	public static void addRecipe(Recipe recipe) {

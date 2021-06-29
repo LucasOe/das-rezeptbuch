@@ -35,8 +35,9 @@ public class Database {
 
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/";
 
-	public Database(String dbName, String user, String password) {
-		initializeDatabase(user, password);
+	public Database(String dbName, String user, String password, boolean forceOverwite) {
+		if (forceOverwite)
+			initializeDatabase(user, password);
 
 		try {
 			connection = DriverManager.getConnection(DB_URL + dbName, user, password);
@@ -52,26 +53,34 @@ public class Database {
 	private void initializeDatabase(String user, String password) {
 		try (Connection initConnection = DriverManager.getConnection(DB_URL, user, password);
 				Statement initStmt = initConnection.createStatement();) {
-			initStmt.executeLargeUpdate(readFile("db/init.sql"));
+			initStmt.execute("DROP SCHEMA IF EXISTS rezepte_test");
+			initStmt.execute("CREATE SCHEMA IF NOT EXISTS rezepte_test");
+			initStmt.execute("USE rezepte_test");
+			ArrayList<String> lines = readFile("db/init.sql");
+			for (String line : lines) {
+				if (line.length() > 0) {
+					initStmt.addBatch(line);
+				}
+			}
+			initStmt.executeBatch();
 		} catch (SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
 		}
 	}
 
-	private String readFile(String pathString) {
-
+	private ArrayList<String> readFile(String pathString) {
+		ArrayList<String> lines = new ArrayList<>();
 		Path path = Paths.get(pathString);
 		try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-			StringBuilder content = new StringBuilder();
 			String line;
 			while ((line = reader.readLine()) != null) {
-				content.append(line + "\n");
+				lines.add(line);
 			}
 
-			return content.toString();
+			return lines;
 		} catch (IOException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
-			return null;
+			return new ArrayList<>();
 		}
 	}
 
