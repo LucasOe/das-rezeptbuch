@@ -12,15 +12,13 @@ public class Quicksort {
 	}
 
 	// https://www.geeksforgeeks.org/java-program-for-quicksort/
-	private static int partition(int sortMode, ArrayList<Recipe> array, int low, int high) {
+	private static int partition(boolean isAsc, ArrayList<Recipe> array, int low, int high) {
 		Recipe pivot = array.get(high);
 		int i = low - 1;
 		for (int j = low; j < high; j++) {
 			// sort mode ascending name
-			if (sortMode == 1 && array.get(j).getName().compareToIgnoreCase(pivot.getName()) <= 0 || // sort by name ascending
-					sortMode == 2 && array.get(j).getName().compareToIgnoreCase(pivot.getName()) >= 0 || // sort by name descending
-					sortMode == 3 && array.get(j).getTime() <= pivot.getTime() || // sort by time ascending
-					sortMode == 4 && array.get(j).getTime() >= pivot.getTime() // sort by time descending
+			if (isAsc && array.get(j).getName().compareToIgnoreCase(pivot.getName()) <= 0 || // sort by name asc
+					!isAsc && array.get(j).getName().compareToIgnoreCase(pivot.getName()) >= 0 // sort by name desc
 			) {
 				i++;
 				Collections.swap(array, i, j); // swap array[i] and array[j]
@@ -38,14 +36,14 @@ public class Quicksort {
 		1 = ascending Name
 		2 = descending Name
 	*/
-	public static void sort(int sortMode, ArrayList<Recipe> array, int low, int high) {
+	public static void sort(boolean isAsc, ArrayList<Recipe> array, int low, int high) {
 		if (low < high) {
 			// pi is partitioning index, arr[pi] is now at right place
-			int pi = partition(sortMode, array, low, high);
+			int pi = partition(isAsc, array, low, high);
 
 			// Recursively sort elements before and after partition
-			sort(sortMode, array, low, pi - 1);
-			sort(sortMode, array, pi + 1, high);
+			sort(isAsc, array, low, pi - 1);
+			sort(isAsc, array, pi + 1, high);
 		}
 	}
 }

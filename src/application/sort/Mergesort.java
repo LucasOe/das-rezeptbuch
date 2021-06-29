@@ -11,7 +11,7 @@ public class Mergesort {
 	}
 
 	// https://www.geeksforgeeks.org/merge-sort/
-	private static void merge(int sortMode, ArrayList<Recipe> array, int l, int m, int r) {
+	private static void merge(boolean isAsc, ArrayList<Recipe> array, int l, int m, int r) {
 		// Find sizes of two subarrays to be merged
 		int n1 = m - l + 1;
 		int n2 = r - m;
@@ -35,8 +35,8 @@ public class Mergesort {
 		// Initial index of merged subarry array
 		int k = l;
 		while (i < n1 && j < n2) {
-			if (sortMode == 3 && leftArray[i].getTime() <= rightArray[j].getTime()
-					|| sortMode == 4 && leftArray[i].getTime() >= rightArray[j].getTime()) {
+			if (isAsc && leftArray[i].getTime() <= rightArray[j].getTime() // sort by time asc
+					|| !isAsc && leftArray[i].getTime() >= rightArray[j].getTime()) { // sort by time desc
 				array.set(k, leftArray[i]);
 				i++;
 			} else {
@@ -61,22 +61,17 @@ public class Mergesort {
 		}
 	}
 
-	/*
-	 * sortMode:
-	 * 3 = ascending Time,
-	 * 4 = descending Time
-	 */
-	public static void sort(int sortMode, ArrayList<Recipe> array, int l, int r) {
+	public static void sort(boolean isAsc, ArrayList<Recipe> array, int l, int r) {
 		if (l < r) {
 			// Find the middle point
 			int m = l + (r - l) / 2;
 
 			// Sort first and seconds halves
-			sort(sortMode, array, l, m);
-			sort(sortMode, array, m + 1, r);
+			sort(isAsc, array, l, m);
+			sort(isAsc, array, m + 1, r);
 
 			// Merge the sorted halves
-			merge(sortMode, array, l, m, r);
+			merge(isAsc, array, l, m, r);
 		}
 	}
 }

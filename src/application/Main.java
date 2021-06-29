@@ -55,25 +55,18 @@ public class Main extends Application {
 		return db.getRecipe(id);
 	}
 
-	/*
-	 * sortMode:
-	 * 0 = disabled,
-	 * 1 = ascending Name,
-	 * 2 = descending Name,
-	 * 3 = ascending Time,
-	 * 4 = descending Time
-	 */
-	// TODO: Rework with isAsc
-	public static ArrayList<Recipe> getRecipeList(int sortMode) {
-		ArrayList<Recipe> recipeList = db.getRecipeList();
-		if (sortMode == 0)
-			return recipeList;
+	public enum Sort {
+		NAME, TIME
+	}
 
-		if (sortMode == 1 || sortMode == 2) {
-			Quicksort.sort(sortMode, recipeList, 0, recipeList.size() - 1);
+	public static ArrayList<Recipe> getRecipeList(Sort sort, boolean isAsc) {
+		ArrayList<Recipe> recipeList = db.getRecipeList();
+
+		if (sort == Sort.NAME) {
+			Quicksort.sort(isAsc, recipeList, 0, recipeList.size() - 1);
 		}
-		if (sortMode == 3 || sortMode == 4) {
-			Mergesort.sort(sortMode, recipeList, 0, recipeList.size() - 1);
+		if (sort == Sort.TIME) {
+			Mergesort.sort(isAsc, recipeList, 0, recipeList.size() - 1);
 		}
 
 		return recipeList;
