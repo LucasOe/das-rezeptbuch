@@ -27,9 +27,9 @@ public class Database {
 	Statement stmt;
 	Statement stmtInner;
 
-	public Database(String url, String user, String password) {
+	public Database(String dbName, String user, String password) {
 		try {
-			connection = DriverManager.getConnection(url, user, password);
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName, user, password);
 			stmt = connection.createStatement();
 			stmtInner = connection.createStatement();
 

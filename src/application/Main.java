@@ -35,12 +35,12 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		// TODO: Add database setup if schema doesn't exist
-		connect();
+		connect("rezepte_test");
 		launch(args); // create GUI
 	}
 
-	public static void connect() {
-		db = new Database("jdbc:mysql://localhost:3306/rezepte_test", "root", "");
+	public static void connect(String dbName) {
+		db = new Database(dbName, "root", "");
 	}
 
 	public static void addRecipe(Recipe recipe) {
