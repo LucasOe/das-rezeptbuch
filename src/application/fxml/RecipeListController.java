@@ -7,9 +7,13 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import application.Main.Sort;
+import application.Search;
 import application.recipe.Recipe;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -38,6 +42,12 @@ public class RecipeListController {
 
 	@FXML
 	private Pane sortTimeArrow;
+
+	@FXML
+	private TextField searchField;
+
+	@FXML
+	private Pane searchButton;
 
 	private Stage primaryStage;
 
@@ -171,5 +181,21 @@ public class RecipeListController {
 	@FXML
 	void clickSortTimeArrow(MouseEvent event) {
 		updateSortButtons(2, !isTimeAsc);
+	}
+
+	@FXML
+	void clickSearchButton(MouseEvent event) {
+		String searchText = searchField.getText();
+
+		ArrayList<Recipe> recipeList = Main.getRecipeList(null, true);
+		recipeListView.getChildren().clear(); // Remove all children
+		addRecipes(Search.searchRecipe(recipeList, searchText));
+	}
+
+	@FXML
+	public void searchEnter(KeyEvent event) {
+		if (event.getCode() == KeyCode.ENTER) {
+			clickSearchButton(null);
+		}
 	}
 }

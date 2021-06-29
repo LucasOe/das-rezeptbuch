@@ -5,6 +5,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
@@ -152,6 +153,45 @@
 												<ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
 													<image>
 														<Image url="@images/menu/down-arrow.png" />
+													</image>
+													<viewport>
+														<Rectangle2D />
+													</viewport>
+												</ImageView>
+											</children>
+										</Pane>
+									</children>
+								</HBox>
+                        <HBox prefHeight="48.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+								<HBox alignment="CENTER" fillHeight="false" spacing="10.0">
+									<children>
+										<TextField fx:id="searchField" onKeyPressed="#searchEnter" prefHeight="48.0" prefWidth="200.0" promptText="Suche" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;">
+											<font>
+												<Font name="Arial Italic" size="28.0" />
+											</font>
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.1599999964237213" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+										</TextField>
+										<Pane fx:id="searchButton" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#clickSearchButton" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 10; -fx-background-color: #F1F1F1;" styleClass="sortTimeArrowPane">
+											<effect>
+												<DropShadow>
+													<color>
+														<Color opacity="0.1599999964237213" />
+													</color>
+												</DropShadow>
+											</effect>
+											<cursor>
+												<Cursor fx:constant="HAND" />
+											</cursor>
+											<children>
+												<ImageView fitHeight="48.0" fitWidth="48.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" styleClass="sortImage">
+													<image>
+														<Image url="@images/menu/search.png" />
 													</image>
 													<viewport>
 														<Rectangle2D />
