@@ -14,6 +14,6 @@ public class RecipeVegetarian extends Recipe {
 
 	@Override
 	public String getStylesheet() {
-		return "application/fxml/stylesheetVegetarian.css";
+		return "application/fxml/views/stylesheets/stylesheetVegetarian.css";
 	}
 }

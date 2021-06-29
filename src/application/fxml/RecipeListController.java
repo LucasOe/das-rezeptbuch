@@ -6,22 +6,15 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.Main;
-import application.category.Category;
+import application.Main.Sort;
 import application.recipe.Recipe;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
-import javafx.scene.effect.BlurType;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class RecipeListController {
 
@@ -46,6 +39,8 @@ public class RecipeListController {
 	@FXML
 	private Pane sortTimeArrow;
 
+	private Stage primaryStage;
+
 	private int sortMethod = 1; // 1 = Name, 2 = Time
 	private boolean isNameAsc = true;
 	private boolean isTimeAsc = true;
@@ -56,8 +51,11 @@ public class RecipeListController {
 
 	@FXML
 	void initialize() {
-		Main.connect();
 		updateSortButtons(sortMethod, isNameAsc);
+	}
+
+	public RecipeListController(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 
 	private void addRecipes(ArrayList<Recipe> recipeList) {
@@ -83,49 +81,10 @@ public class RecipeListController {
 
 	private void addRecipePane(HBox hbox, Recipe recipe) {
 		try {
-			Pane recipePane = FXMLLoader.load(getClass().getResource("recipeView.fxml"));
-
-			// set pane id
-			recipePane.setId(String.valueOf(recipe.getId()));
-
-			// set name label
-			Label recipeLabelName = (Label) recipePane.lookup("#recipeLabelName");
-			recipeLabelName.setText(recipe.getName());
-
-			// set time label
-			Label recipeLabelTime = (Label) recipePane.lookup("#recipeLabelTime");
-			recipeLabelTime.setText(String.valueOf(recipe.getTime()) + "min");
-
-			// set image
-			ImageView recipeImageView = (ImageView) recipePane.lookup("#recipeImageView");
-			Image recipeImage = new Image("application/fxml/images/recipes/" + recipe.getImageUrl());
-			recipeImageView.setImage(recipeImage);
-
-			// add categories
-			for (Category category : recipe.getCategoryList()) {
-				Image categoryImage = new Image(category.getCategoryImageUrl());
-				ImageView imageView = new ImageView();
-
-				imageView.setImage(categoryImage);
-				imageView.setFitWidth(47);
-				imageView.setFitHeight(47);
-				imageView.setPreserveRatio(true);
-				imageView.setEffect(new DropShadow(BlurType.THREE_PASS_BOX, new Color(0, 0, 0, 0.25), 10, 0, 0, 0));
-
-				// Tooltip workaround
-				Label tooltipLabel = new Label();
-				tooltipLabel.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-				tooltipLabel.setGraphic(imageView);
-				tooltipLabel.setTooltip(new Tooltip(category.getCategoryName()));
-
-				HBox recipeCategoryList = (HBox) recipePane.lookup("#recipeCategoryList");
-				recipeCategoryList.getChildren().add(tooltipLabel);
-				/*
-				*/
-			}
-
-			// set background color
-			recipePane.getStylesheets().add(recipe.getStylesheet());
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("views/recipePanelView.fxml"));
+			RecipePanelController recipePanelController = new RecipePanelController(primaryStage, recipe);
+			loader.setController(recipePanelController);
+			Pane recipePane = loader.load();
 
 			hbox.getChildren().add(recipePane);
 		} catch (IOException e) {
@@ -133,8 +92,8 @@ public class RecipeListController {
 		}
 	}
 
-	private void updateRecipePanes(int sortMethod) {
-		ArrayList<Recipe> recipeList = Main.getRecipeList(sortMethod);
+	private void updateRecipePanes(Sort sort, boolean isAsc) {
+		ArrayList<Recipe> recipeList = Main.getRecipeList(sort, isAsc);
 		recipeListView.getChildren().clear(); // Remove all children
 		addRecipes(recipeList);
 	}
@@ -150,10 +109,10 @@ public class RecipeListController {
 
 				if (isAsc) {
 					sortNameArrow.getStyleClass().add(CSS_SORT_ASC);
-					updateRecipePanes(1);
+					updateRecipePanes(Sort.NAME, true);
 				} else {
 					sortNameArrow.getStyleClass().add(CSS_SORT_DESC);
-					updateRecipePanes(2);
+					updateRecipePanes(Sort.NAME, false);
 				}
 
 				break;
@@ -165,10 +124,10 @@ public class RecipeListController {
 
 				if (isAsc) {
 					sortTimeArrow.getStyleClass().add(CSS_SORT_ASC);
-					updateRecipePanes(3);
+					updateRecipePanes(Sort.TIME, true);
 				} else {
 					sortTimeArrow.getStyleClass().add(CSS_SORT_DESC);
-					updateRecipePanes(4);
+					updateRecipePanes(Sort.TIME, false);
 				}
 
 				break;

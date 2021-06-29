@@ -14,7 +14,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#clickRecipe" prefHeight="198.0" prefWidth="613.0" style="-fx-background-radius: 15;" styleClass="recipePane" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeController">
+<Pane fx:id="recipePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#clickRecipe" prefHeight="198.0" prefWidth="613.0" style="-fx-background-radius: 15;" styleClass="recipePane" stylesheets="@stylesheets/stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
 		<HBox prefHeight="198.0" prefWidth="613.0">
 			<children>

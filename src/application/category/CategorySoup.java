@@ -8,7 +8,7 @@ public class CategorySoup extends Category {
 
 	@Override
 	public String getCategoryImageUrl() {
-		return "application/fxml/images/categories/Element 34@8x.png";
+		return "application/fxml/views/images/categories/Element 34@8x.png";
 	}
 
 }

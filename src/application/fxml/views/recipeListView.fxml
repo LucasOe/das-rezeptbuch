@@ -18,14 +18,14 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxml.RecipeListController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF0EE;" stylesheets="@stylesheets/stylesheet.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
 	<center>
 		<StackPane BorderPane.alignment="CENTER">
 			<BorderPane.margin>
 				<Insets />
 			</BorderPane.margin>
 			<children>
-				<ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
+				<ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="NEVER" StackPane.alignment="CENTER">
 					<content>
 						<VBox fx:id="recipeListView" alignment="TOP_CENTER" fillWidth="false" spacing="20.0">
 							<padding>
@@ -51,7 +51,7 @@
 	<top>
 		<HBox BorderPane.alignment="TOP_LEFT">
 			<children>
-				<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+				<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1; -fx-border-style: hidden solid hidden hidden; -fx-border-color: #dbdbdb; -fx-border-width: 2;">
 					<children>
 						<ImageView fitHeight="62.0" fitWidth="62.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
 							<image>
@@ -177,14 +177,14 @@
 	<bottom>
 		<HBox>
 			<children>
-				<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1;" />
+				<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="86.0" style="-fx-background-color: #F1F1F1; -fx-border-style: hidden solid hidden hidden; -fx-border-color: #dbdbdb; -fx-border-width: 2;" />
 			</children>
 		</HBox>
 	</bottom>
 	<left>
 		<HBox prefWidth="86.0" BorderPane.alignment="CENTER">
 			<children>
-				<VBox alignment="CENTER" prefWidth="86.0" style="-fx-background-color: #F1F1F1;">
+				<VBox alignment="CENTER" prefWidth="86.0" style="-fx-background-color: #F1F1F1; -fx-border-style: hidden solid hidden hidden; -fx-border-color: #dbdbdb; -fx-border-width: 2;">
 					<children>
 						<ToggleButton contentDisplay="GRAPHIC_ONLY" maxWidth="86.0" mnemonicParsing="false" prefHeight="86.0" selected="true" style="-fx-background-color: #F1F1F1;" text="ToggleButton">
 							<graphic>

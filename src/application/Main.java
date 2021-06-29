@@ -3,7 +3,10 @@ package application;
 import java.util.ArrayList;
 
 import application.category.Category;
+import application.fxml.RecipeListController;
 import application.recipe.Recipe;
+import application.sort.Mergesort;
+import application.sort.Quicksort;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,21 +20,26 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("fxml/recipeListView.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/views/recipeListView.fxml"));
+		RecipeListController recipeListController = new RecipeListController(primaryStage);
+		loader.setController(recipeListController);
+		Parent root = loader.load();
+
 		Scene scene = new Scene(root, 1920, 1080);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Das Rezeptbuch");
-		primaryStage.getIcons().add(new Image("application/fxml/images/menu/Element 3@8x.png"));
+		primaryStage.getIcons().add(new Image("application/fxml/views/images/menu/Element 3@8x.png"));
 		primaryStage.setResizable(true);
 		primaryStage.show();
 	}
 
 	public static void main(String[] args) {
+		connect("rezepte", true);
 		launch(args); // create GUI
 	}
 
-	public static void connect() {
-		db = new Database("jdbc:mysql://localhost:3306/rezepte_test", "root", "");
+	public static void connect(String dbName, boolean init) {
+		db = new Database(dbName, "root", "", init);
 	}
 
 	public static void addRecipe(Recipe recipe) {
@@ -46,24 +54,18 @@ public class Main extends Application {
 		return db.getRecipe(id);
 	}
 
-	/*
-	 * sortMode:
-	 * 0 = disabled,
-	 * 1 = ascending Name,
-	 * 2 = descending Name,
-	 * 3 = ascending Time,
-	 * 4 = descending Time
-	 */
-	public static ArrayList<Recipe> getRecipeList(int sortMode) {
-		ArrayList<Recipe> recipeList = db.getRecipeList();
-		if (sortMode == 0)
-			return recipeList;
+	public enum Sort {
+		NAME, TIME
+	}
 
-		if (sortMode == 1 || sortMode == 2) {
-			Quicksort.sort(sortMode, recipeList, 0, recipeList.size() - 1);
+	public static ArrayList<Recipe> getRecipeList(Sort sort, boolean isAsc) {
+		ArrayList<Recipe> recipeList = db.getRecipeList();
+
+		if (sort == Sort.NAME) {
+			Quicksort.sort(isAsc, recipeList, 0, recipeList.size() - 1);
 		}
-		if (sortMode == 3 || sortMode == 4) {
-			Mergesort.sort(sortMode, recipeList, 0, recipeList.size() - 1);
+		if (sort == Sort.TIME) {
+			Mergesort.sort(isAsc, recipeList, 0, recipeList.size() - 1);
 		}
 
 		return recipeList;

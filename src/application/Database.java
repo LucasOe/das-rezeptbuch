@@ -1,5 +1,11 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -27,15 +33,53 @@ public class Database {
 	Statement stmt;
 	Statement stmtInner;
 
-	public Database(String url, String user, String password) {
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/";
+
+	public Database(String dbName, String user, String password, boolean init) {
+		if (init)
+			initializeDatabase(dbName, user, password);
+
 		try {
-			connection = DriverManager.getConnection(url, user, password);
+			connection = DriverManager.getConnection(DB_URL + dbName, user, password);
 			stmt = connection.createStatement();
 			stmtInner = connection.createStatement();
 
 			System.out.println("Connected");
 		} catch (SQLException exception) {
 			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+		}
+	}
+
+	private void initializeDatabase(String dbName, String user, String password) {
+		try (Connection initConnection = DriverManager.getConnection(DB_URL, user, password);
+				Statement initStmt = initConnection.createStatement();) {
+			initStmt.execute("CREATE SCHEMA IF NOT EXISTS " + dbName);
+			initStmt.execute("USE " + dbName);
+			ArrayList<String> lines = readFile("db/init.sql");
+			for (String line : lines) {
+				if (line.length() > 0) {
+					initStmt.addBatch(line);
+				}
+			}
+			initStmt.executeBatch();
+		} catch (SQLException exception) {
+			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+		}
+	}
+
+	private ArrayList<String> readFile(String pathString) {
+		ArrayList<String> lines = new ArrayList<>();
+		Path path = Paths.get(pathString);
+		try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				lines.add(line);
+			}
+
+			return lines;
+		} catch (IOException exception) {
+			Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, exception);
+			return new ArrayList<>();
 		}
 	}
 
