@@ -91,7 +91,7 @@ public class RecipePanelController {
 			tooltipLabel.setGraphic(imageView);
 			tooltipLabel.setTooltip(new Tooltip(category.getCategoryName()));
 			recipeCategoryList.getChildren().add(tooltipLabel);
-		}	
+		}
 	}
 
 	private void changeScene() {
@@ -101,7 +101,7 @@ public class RecipePanelController {
 			RecipeInfoController recipeInfoController = new RecipeInfoController(primaryStage, recipe);
 			loader.setController(recipeInfoController);
 			Pane pane = loader.load();
-			
+
 			double width = primaryStage.getScene().getWidth();
 			double height = primaryStage.getScene().getHeight();
 			Scene scene = new Scene(pane, width, height);

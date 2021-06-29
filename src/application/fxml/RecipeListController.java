@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.Main.Sort;
 import application.recipe.Recipe;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -91,8 +92,8 @@ public class RecipeListController {
 		}
 	}
 
-	private void updateRecipePanes(int sortMethod) {
-		ArrayList<Recipe> recipeList = Main.getRecipeList(sortMethod);
+	private void updateRecipePanes(Sort sort, boolean isAsc) {
+		ArrayList<Recipe> recipeList = Main.getRecipeList(sort, isAsc);
 		recipeListView.getChildren().clear(); // Remove all children
 		addRecipes(recipeList);
 	}
@@ -108,10 +109,10 @@ public class RecipeListController {
 
 				if (isAsc) {
 					sortNameArrow.getStyleClass().add(CSS_SORT_ASC);
-					updateRecipePanes(1);
+					updateRecipePanes(Sort.NAME, true);
 				} else {
 					sortNameArrow.getStyleClass().add(CSS_SORT_DESC);
-					updateRecipePanes(2);
+					updateRecipePanes(Sort.NAME, false);
 				}
 
 				break;
@@ -123,10 +124,10 @@ public class RecipeListController {
 
 				if (isAsc) {
 					sortTimeArrow.getStyleClass().add(CSS_SORT_ASC);
-					updateRecipePanes(3);
+					updateRecipePanes(Sort.TIME, true);
 				} else {
 					sortTimeArrow.getStyleClass().add(CSS_SORT_DESC);
-					updateRecipePanes(4);
+					updateRecipePanes(Sort.TIME, false);
 				}
 
 				break;

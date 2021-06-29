@@ -16,9 +16,9 @@
 					</color>
 				</DropShadow>
 			</effect>
-         <font>
-            <Font name="Cambria" size="24.0" />
-         </font>
+			<font>
+				<Font name="Cambria" size="24.0" />
+			</font>
 		</Label>
 		<Label fx:id="ingredientLabelName" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #F8F8F8; -fx-background-radius: 10;" text="Inhalt" textAlignment="CENTER" textFill="#707070" HBox.hgrow="ALWAYS">
 			<effect>
@@ -28,9 +28,9 @@
 					</color>
 				</DropShadow>
 			</effect>
-         <font>
-            <Font name="Cambria" size="24.0" />
-         </font>
+			<font>
+				<Font name="Cambria" size="24.0" />
+			</font>
 		</Label>
 	</children>
 </HBox>
