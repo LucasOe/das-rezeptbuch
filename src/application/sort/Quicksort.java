@@ -11,7 +11,6 @@ public class Quicksort {
 		throw new IllegalStateException("Utility class");
 	}
 
-	// https://www.geeksforgeeks.org/java-program-for-quicksort/
 	private static int partition(boolean isAsc, ArrayList<Recipe> array, int low, int high) {
 		Recipe pivot = array.get(high);
 		int i = low - 1;

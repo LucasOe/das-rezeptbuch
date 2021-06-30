@@ -10,7 +10,6 @@ public class Mergesort {
 		throw new IllegalStateException("Utility class");
 	}
 
-	// https://www.geeksforgeeks.org/merge-sort/
 	private static void merge(boolean isAsc, ArrayList<Recipe> array, int l, int m, int r) {
 		// Find sizes of two subarrays to be merged
 		int n1 = m - l + 1;
